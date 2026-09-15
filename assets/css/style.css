@@ -513,3 +513,5 @@ button{ font-family: inherit; background:none; border:none; cursor:pointer; colo
 .axiom-gallery-slide img { aspect-ratio:auto; height:auto; max-height:none; object-fit:contain; background:#202228; }
 .axiom-gallery-slide figcaption { min-height:145px; }
 @media(max-width:600px) { .axiom-carousel .carousel-choices { grid-template-columns:repeat(2,1fr); } .axiom-gallery-slide figcaption { min-height:210px; } }
+
+.soft-arm-upright { transform:rotate(180deg); }
