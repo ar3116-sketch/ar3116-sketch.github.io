@@ -56,7 +56,7 @@
       </p>
       <div class="hero-meta reveal">
         <span class="meta-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Edison, NJ</span>
-        <span class="meta-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> adarjkb@gmail.com</span>
+        <span class="meta-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> ar3116@scarletmail.rutgers.edu</span>
         <span class="meta-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5Zm0 0v6c3 2 7 3 10 3s7-1 10-3v-6"/></svg> Rutgers University, Class of 2030</span>
       </div>
       <div class="hero-actions reveal">
@@ -107,8 +107,8 @@
       </div>
       <div class="about-grid">
         <p class="about-lead reveal">
-          I'm an incoming Mechanical Engineering student at Rutgers University, graduating from
-          Edison Academy Magnet School in 2026. My work spans competitive physics, applied
+          I'm a Mechanical Engineering student in Rutgers University's Class of 2030 and a 2026
+          graduate of Edison Academy Magnet School. My work spans competitive physics, applied
           machine learning, and hands-on robotics — I like problems that require both a
           whiteboard and a soldering iron. Recently, I co-authored an accepted NLP workshop
           paper, won a national NASA challenge for a 3D orbital-mechanics visualization built
@@ -309,7 +309,7 @@
           <h3>Beyond the Haystack: Sensitivity to Context in Legal Reference Recall</h3>
           <p class="research-meta">NLLP 2025 Workshop @ EMNLP · Third Author · Accepted 2025</p>
           <ul>
-            <li>Perfect reviews from all reviewers; introduced an evaluation framework measuring LLM recall from U.S. court opinion briefings.</li>
+            <li>Introduced an evaluation framework measuring LLM recall from U.S. court opinion briefings.</li>
             <li>Exposed limitations of standard long-context benchmarks such as Needle in a Haystack across three naturalistic legal recall tasks.</li>
           </ul>
         </article>
@@ -318,8 +318,9 @@
           <h3>Physics-Informed Neural Network Research</h3>
           <p class="research-meta">Senior Year · 2025–2026</p>
           <ul>
-            <li>Designed a hyperlocalized multimodal Physics-Informed Diffusion Graph Transformer with an on-device quantum layer.</li>
-            <li>Placed 2nd at the NJ State Science Fair.</li>
+            <li>Achieved 117× faster inference than a finite-difference reference in project benchmarks, with 97% mass-conservation adherence.</li>
+            <li>Used the 1D Saint-Venant continuity equation as a training constraint to encourage physically consistent flood forecasts.</li>
+            <li>2nd Place, NJ State Science Fair — Computer Science Division.</li>
           </ul>
         </article>
 
@@ -343,6 +344,15 @@
       </div>
 
       <div class="project-grid">
+        <article class="project-card project-featured reveal" id="samson">
+          <figure class="project-media samson-media"><img src="assets/media/samson-bicopter.jpg" alt="Green SA-2 Samson bicopter CAD model with two ducted rotors and framed cockpit" width="914" height="660" loading="lazy" /><figcaption>PRINT1 bicopter configuration · CAD development view</figcaption></figure>
+          <div><span class="project-date">2026 · Work in progress</span>
+          <h3>SA-2 Samson Bicopter</h3>
+          <p>A 1:15-scale aircraft design exploring twin independently tilting rotors, printed structural parts, and integrated electrical packaging.</p>
+          <p>Current work connects the CAD assembly, tilt mechanism, wiring, and fabrication documentation. Physical validation and flight testing are still ahead.</p>
+          <a class="btn btn-ghost" href="https://github.com/ar3116-sketch/samson" target="_blank" rel="noopener">Explore the engineering repository ↗</a></div>
+        </article>
+
         <article class="project-card reveal">
           <div class="project-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-30 12 12)"/></svg>
@@ -357,10 +367,11 @@
           <div class="project-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-2 3-2 6 0 9M12 22c2-3 2-6 0-9M2 12c3-2 6-2 9 0M22 12c-3 2-6 2-9 0"/><circle cx="12" cy="12" r="2.4"/></svg>
           </div>
-          <h3>Soft Robotics Arm</h3>
+          <figure class="project-media"><img src="assets/media/soft-arm-assembly.jpg" alt="Segmented white soft robot arm mounted on its black actuation base" width="1200" height="1600" loading="lazy" /></figure><h3>Soft Robotics Arm</h3>
           <span class="project-date">2024–2026</span>
           <p>3-cable TPU-segment arm using differential cable tension and material flexibility for full 3D spatial movement.</p>
           <p>Developing a VLM + heuristic solver control approach alongside pose-driven actuation methods.</p>
+          <a class="media-link" href="#soft-arm-demos">See the build and control demos ↓</a>
         </article>
 
         <article class="project-card reveal">
@@ -375,6 +386,7 @@
     </div>
   </section>
 
+<section class="build-gallery" id="soft-arm-demos" aria-labelledby="demos-title"><div class="section-head"><span class="section-kicker">Inside the build</span><h3 id="demos-title">Soft robotics, from assembly to motion.</h3><p>Prototype photos and bench experiments. All videos are silent.</p></div><div class="demo-grid"><figure class="demo-card"><img src="assets/media/soft-arm-early-prototype.jpg" alt="Early segmented soft-arm prototype with a green and white base" loading="lazy" /><figcaption><strong>Early prototype</strong><span>The first assembly and cable-driven arm.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-bending.jpg" aria-label="Cable-driven bending, silent video"><source src="assets/media/soft-arm-bending.mp4" type="video/mp4" /></video><figcaption><strong>Cable-driven bending</strong><span>Differential cable tension bends the compliant arm.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-compliance.jpg" aria-label="Material compliance, silent video"><source src="assets/media/soft-arm-compliance.mp4" type="video/mp4" /></video><figcaption><strong>Material compliance</strong><span>A close look at the segmented arm and its flexibility.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-trajectory.jpg" aria-label="Trajectory experiment, silent video"><source src="assets/media/soft-arm-trajectory.mp4" type="video/mp4" /></video><figcaption><strong>Trajectory experiment</strong><span>Bench experiment alongside a trajectory visualization.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-response.jpg" aria-label="Arm response, silent video"><source src="assets/media/soft-arm-response.mp4" type="video/mp4" /></video><figcaption><strong>Arm response</strong><span>A short look at the prototype in motion.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-pose-control.jpg" aria-label="Pose-driven control experiment, silent video"><source src="assets/media/soft-arm-pose-control.mp4" type="video/mp4" /></video><figcaption><strong>Pose-driven control experiment</strong><span>Hand-pose input and the arm prototype during a control experiment.</span></figcaption></figure></div><details class="demo-more"><summary>Watch the project demonstration</summary><figure class="demo-card demo-wide"><video controls muted playsinline preload="none" poster="assets/media/engineering-demo.jpg" aria-label="Project demonstration, silent video"><source src="assets/media/engineering-demo.mp4" type="video/mp4" /></video><figcaption><strong>Project demonstration</strong><span>A longer look at the workbench demonstration.</span></figcaption></figure></details></section>
   <!-- VOLUNTEERING / SERVICE -->
   <section id="service" class="section section-alt">
     <div class="container">
@@ -416,8 +428,8 @@
         <p class="contact-sub">Open to research collaborations, competitions, and interesting problems.</p>
       </div>
       <div class="contact-actions reveal">
-        <a href="mailto:adarjkb@gmail.com" class="btn btn-primary btn-lg">
-          adarjkb@gmail.com
+        <a href="mailto:ar3116@scarletmail.rutgers.edu" class="btn btn-primary btn-lg">
+          ar3116@scarletmail.rutgers.edu
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a href="assets/resume/Advaith_Renjith_Resume.pdf" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Download Resume</a>
