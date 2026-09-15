@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920">
+<rect width="1400" height="920" fill="#f6f7f4"/>
+<style>text{font-family:Arial,sans-serif;fill:#192d33}.title{font-size:30px;font-weight:bold}.label{font-size:17px}.small{font-size:15px}.node{fill:white;stroke:#54696d;stroke-width:2}.power{fill:none;stroke:#ba4036;stroke-width:4}.signal{fill:none;stroke:#2e749d;stroke-width:3}.servo{fill:none;stroke:#b27516;stroke-width:4}</style>
+<text x="45" y="50" class="title">KESTREL MINI · electrical connection plan</text>
+<text x="45" y="80" class="small">Provisional pad mapping. Verify exact purchased board and firmware before soldering.</text>
+<rect class="node" x="45" y="135" width="255" height="110" rx="10"/>
+<text x="60" y="162" class="label">B1 · 4S 1300 mAh LiPo</text>
+<text x="60" y="185" class="label">14 AWG stock leads</text>
+<text x="60" y="208" class="label">J2: 5-wire balance plug</text>
+<rect class="node" x="360" y="135" width="220" height="110" rx="10"/>
+<text x="375" y="162" class="label">J1 · XT60 connector</text>
+<text x="375" y="185" class="label">Insulated power split</text>
+<text x="375" y="208" class="label">VBAT: 12–16.8 V</text>
+<polyline class="power" points="300,180 360,180"/>
+<rect class="node" x="690" y="125" width="270" height="105" rx="10"/>
+<text x="705" y="152" class="label">ESC L · 30 A / 4S</text>
+<text x="705" y="175" class="label">18 AWG + and GND</text>
+<text x="705" y="198" class="label">Signal: FC S1 + GND</text>
+<rect class="node" x="690" y="260" width="270" height="105" rx="10"/>
+<text x="705" y="287" class="label">ESC R · 30 A / 4S</text>
+<text x="705" y="310" class="label">18 AWG + and GND</text>
+<text x="705" y="333" class="label">Signal: FC S2 + GND</text>
+<rect class="node" x="1070" y="125" width="285" height="105" rx="10"/>
+<text x="1085" y="152" class="label">Motor L · RS2205 2300KV</text>
+<text x="1085" y="175" class="label">Three phase wires</text>
+<text x="1085" y="198" class="label">Commercial CW/CCW prop</text>
+<rect class="node" x="1070" y="260" width="285" height="105" rx="10"/>
+<text x="1085" y="287" class="label">Motor R · RS2205 2300KV</text>
+<text x="1085" y="310" class="label">Opposite rotation to L</text>
+<text x="1085" y="333" class="label">Commercial CW/CCW prop</text>
+<polyline class="power" points="580,180 635,180 635,175 690,175"/>
+<polyline class="power" points="960,175 1070,175"/>
+<polyline class="power" points="580,180 635,180 635,310 690,310"/>
+<polyline class="power" points="960,310 1070,310"/>
+<rect class="node" x="45" y="315" width="275" height="105" rx="10"/>
+<text x="60" y="342" class="label">C1 · 470 µF / 35 V</text>
+<text x="60" y="365" class="label">Across VBAT and GND</text>
+<text x="60" y="388" class="label">Observe capacitor polarity</text>
+<polyline class="power" points="360,210 340,210 340,365 320,365"/>
+<rect class="node" x="360" y="475" width="300" height="150" rx="10"/>
+<text x="375" y="502" class="label">U1 · Matek F405-TE</text>
+<text x="375" y="525" class="label">VBAT + GND input</text>
+<text x="375" y="548" class="label">S1/S2 → ESCs</text>
+<text x="375" y="571" class="label">S9/S10 → servo signals</text>
+<text x="375" y="594" class="label">Regulated 5 V → RP1</text>
+<polyline class="power" points="470,245 470,475"/>
+<text x="485" y="450" class="small">FC rated VBAT input</text>
+<polyline class="signal" points="660,515 670,515 670,210 690,210"/>
+<polyline class="signal" points="660,540 680,540 680,345 690,345"/>
+<rect class="node" x="45" y="500" width="255" height="105" rx="10"/>
+<text x="60" y="527" class="label">U3 · RP1 ELRS receiver</text>
+<text x="60" y="550" class="label">5 V + GND from FC</text>
+<text x="60" y="573" class="label">TX → RX2; RX → TX2</text>
+<polyline class="signal" points="300,550 360,550"/>
+<rect class="node" x="690" y="475" width="280" height="150" rx="10"/>
+<text x="705" y="502" class="label">U2 · Hobbywing UBEC 5A</text>
+<text x="705" y="525" class="label">VBAT input + GND</text>
+<text x="705" y="548" class="label">Set output to 6.0 V</text>
+<text x="705" y="571" class="label">6 V and GND → both servos</text>
+<text x="705" y="594" class="label">Do not join 6 V to FC 5 V</text>
+<polyline class="power" points="580,210 610,210 610,440 830,440 830,475"/>
+<rect class="node" x="1070" y="465" width="285" height="90" rx="10"/>
+<text x="1085" y="492" class="label">A L · BMS-115WV+ servo</text>
+<text x="1085" y="515" class="label">6 V / GND / FC S9 signal</text>
+<rect class="node" x="1070" y="585" width="285" height="90" rx="10"/>
+<text x="1085" y="612" class="label">A R · BMS-115WV+ servo</text>
+<text x="1085" y="635" class="label">6 V / GND / FC S10 signal</text>
+<polyline class="servo" points="970,520 1020,520 1020,500 1070,500"/>
+<polyline class="servo" points="970,540 1020,540 1020,620 1070,620"/>
+<polyline class="signal" points="570,625 570,715 1040,715 1040,535 1070,535"/>
+<polyline class="signal" points="595,625 595,740 1050,740 1050,655 1070,655"/>
+<rect class="node" x="45" y="665" width="275" height="80" rx="10"/>
+<text x="60" y="692" class="label">Buzzer · FC buzzer + / −</text>
+<text x="60" y="715" class="label">Use correct switched pad</text>
+<polyline class="signal" points="360,590 335,590 335,700 320,700"/>
+<text x="45" y="805" class="small">Red: VBAT power branches · amber: regulated 6 V servo branch · blue: signal / FC 5 V harness</text>
+<text x="45" y="835" class="label">All electrical grounds are common. Keep the FC 5 V and servo 6 V positive rails separate.</text>
+<text x="45" y="865" class="small">Signal pins are a proposed allocation; verify BI firmware support, timers, output order and motion direction with props removed.</text>
+<text x="45" y="892" class="small">3D wires show installation envelopes. Exact pad locations, strain relief, connector retention and servo current require bench verification.</text>
+</svg>
