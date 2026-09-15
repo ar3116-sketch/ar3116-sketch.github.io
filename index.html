@@ -20,11 +20,11 @@
   <div class="container header-inner">
     <a href="#top" class="logo">A<span class="logo-dot">R</span></a>
     <nav class="nav" id="nav">
-      <a href="#about" data-nav>About</a>
-      <a href="#credentials" data-nav>Credentials</a>
-      <a href="#awards" data-nav>Awards</a>
-      <a href="#research" data-nav>Research</a>
       <a href="#projects" data-nav>Projects</a>
+      <a href="#research" data-nav>Research</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#awards" data-nav>Awards</a>
+      <a href="#credentials" data-nav>Education</a>
       <a href="#service" data-nav>Service</a>
       <a href="#contact" data-nav>Contact</a>
     </nav>
@@ -45,14 +45,13 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
+      <div class="hero-copy">
       <p class="eyebrow reveal">Mechanical Engineering · Physics · AI &amp; Robotics Research</p>
       <h1 class="hero-title reveal">
         <span class="hero-name">Advaith Renjith</span>
       </h1>
       <p class="hero-sub reveal">
-        I build at the intersection of physics, robotics, and machine intelligence —
-        from orbital mechanics visualizations to on-device AI systems and published
-        NLP research.
+        I build robots, physics-informed models, and tools for working through hard engineering problems. Mechanical Engineering at Rutgers, Class of 2030.
       </p>
       <div class="hero-meta reveal">
         <span class="meta-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Edison, NJ</span>
@@ -66,30 +65,29 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>
         </a>
       </div>
+      </div>
+      <a class="hero-project" href="#samson">
+        <img src="assets/media/samson-bicopter.jpg" alt="Green SA-2 Samson bicopter CAD with twin tilting rotor assemblies" fetchpriority="high" />
+        <span class="hero-project-caption"><strong>SA-2 Samson</strong><span>Bicopter CAD prototype · In development ↗</span></span>
+      </a>
+      <div class="featured-work">
+        <a class="work-preview" href="#soft-arm-demos"><img src="assets/media/soft-arm-bending.jpg" alt="Cable-driven soft robot arm on the workbench" /><span><small>Built &amp; tested</small><strong>Cable-driven soft robotics</strong><span>Watch the silent bench demos ↗</span></span></a>
+        <a class="work-preview" href="#axiom"><img src="assets/media/axiom-statics-3d.png" alt="Axiom workspace showing a 3D statics calculation" /><span><small>Desktop software</small><strong>Axiom math notebook</strong><span>Explore the working application ↗</span></span></a>
+        <a class="work-preview work-result" href="#research"><span><small>Physics-informed flood modeling</small><strong class="result-number">117×</strong><span>Faster inference than a finite-difference reference in project benchmarks.</span><small>97% mass-conservation adherence · See research ↗</small></span></a>
+      </div>
     </div>
-    <a href="#about" class="scroll-cue" aria-label="Scroll down">
-      <span></span>
-    </a>
   </section>
 
   <!-- STAT STRIP -->
   <section class="stat-strip">
     <div class="container stat-grid">
       <div class="stat-item reveal">
-        <span class="stat-num" data-count="1580">0</span>
-        <span class="stat-label">SAT Superscore</span>
-      </div>
-      <div class="stat-item reveal">
-        <span class="stat-num" data-count="12">0</span>
-        <span class="stat-label">AP Exams · 8 Fives</span>
-      </div>
-      <div class="stat-item reveal">
         <span class="stat-num-text">Nat'l Winner</span>
         <span class="stat-label">NASA App Dev Challenge</span>
       </div>
       <div class="stat-item reveal">
-        <span class="stat-num" data-count="700">0</span>
-        <span class="stat-label">Volunteer Hours+</span>
+        <span class="stat-num-text">Top 400</span>
+        <span class="stat-label">USA Physics Olympiad</span>
       </div>
       <div class="stat-item reveal">
         <span class="stat-num-text">EMNLP</span>
@@ -98,11 +96,119 @@
     </div>
   </section>
 
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Selected projects</span>
+        <h2>Things I've designed, built, and shipped.</h2>
+      </div>
+
+      <div class="project-grid">
+<article class="project-card prototype-feature reveal" id="samson"><span class="project-date">2026 · Designs in progress</span><h3>Bicopter prototypes</h3><p class="prototype-intro">Two aircraft concepts, from the outer shell to the engineering inside. Explore the structure, electronics, and wiring behind each design.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="Bicopter prototype views" tabindex="0"><div class="carousel-choices" aria-label="Choose a prototype view"><button type="button" data-goto="0" aria-pressed="true">Samson · Exterior</button><button type="button" data-goto="1" aria-pressed="false">Samson · Shell off</button><button type="button" data-goto="2" aria-pressed="false">Samson · Wiring</button><button type="button" data-goto="3" aria-pressed="false">Kestrel · Exterior</button><button type="button" data-goto="4" aria-pressed="false">Kestrel · Shell off</button><button type="button" data-goto="5" aria-pressed="false">Kestrel · Wiring</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 6: Samson · Exterior" ><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Exterior"><img src="assets/media/samson-bicopter.jpg" alt="The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development." loading="lazy" /></a><figcaption><strong>SA-2 Samson / PRINT1</strong><span>The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development.</span><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 6: Samson · Shell off" hidden><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Shell off"><img src="assets/media/samson-interior.jpg" alt="Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity." loading="lazy" /></a><figcaption><strong>Samson: beneath the shell</strong><span>Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity.</span><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 6: Samson · Wiring" hidden><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener" aria-label="Open full-size Samson · Wiring"><img src="assets/media/samson-wiring.png" alt="The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections." loading="lazy" /></a><figcaption><strong>Samson: flight-controller wiring</strong><span>The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections.</span><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 6: Kestrel · Exterior" hidden><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Exterior"><img src="assets/media/kestrel-exterior.jpg" alt="A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos." loading="lazy" /></a><figcaption><strong>Kestrel Mini R4</strong><span>A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos.</span><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 6: Kestrel · Shell off" hidden><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Shell off"><img src="assets/media/kestrel-interior.jpg" alt="Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe." loading="lazy" /></a><figcaption><strong>Kestrel: electronics and routing</strong><span>Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe.</span><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="5" role="group" aria-roledescription="slide" aria-label="6 of 6: Kestrel · Wiring" hidden><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Wiring"><img src="assets/media/kestrel-wiring.svg" alt="Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule." loading="lazy" /></a><figcaption><strong>Kestrel: wiring overview</strong><span>Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule.</span><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous prototype view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-direction="1" aria-label="Next prototype view">→</button></div></div><p class="prototype-status">Both are CAD prototypes; physical validation and flight testing remain ahead.</p><div class="prototype-links"><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/samson" target="_blank" rel="noopener">Samson repository ↗</a><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/kestrel-bicopter" target="_blank" rel="noopener">Kestrel repository ↗</a></div></article>
+<article class="project-card axiom-feature reveal" id="axiom">
+<div><span class="project-date">2026 · Desktop application</span><h3>Axiom — Offline Math Notebook</h3>
+<p>A notebook I built for working through mathematics: typeset equations and derivations, matrices, interactive graphs, multivariable calculus, and 2D/3D statics in one workspace.</p>
+<p>Keep a reference document beside the working notebook, explore geometry and forces, and export assignments as PDFs. Notebooks stay on the computer.</p>
+<p class="axiom-release-status">macOS release preparation: code signing and notarization in progress.</p></div>
+<section class="prototype-carousel axiom-carousel" aria-label="Axiom application screenshots" aria-roledescription="carousel">
+<div class="carousel-choices">
+<button type="button" data-goto="0" aria-pressed="true">3D mechanics</button>
+<button type="button" data-goto="1" aria-pressed="false">2D force balance</button>
+<button type="button" data-goto="2" aria-pressed="false">3D calculus</button>
+<button type="button" data-goto="3" aria-pressed="false">Notebook + reference</button>
+</div>
+<figure class="prototype-slide axiom-gallery-slide" data-slide><a href="assets/media/axiom-statics-3d.png" target="_blank" rel="noopener"><img src="assets/media/axiom-statics-3d.png" alt="Axiom 3D truss example with compression forces, reaction arrows, and a solved force table" loading="lazy" /></a><figcaption><strong>Space truss · forces in three dimensions</strong><span>Axiom’s method-of-joints view pairs the structure with joint coordinates, supports, member forces, and reaction components. Three force-balance equations per joint give 12 equations for this four-joint example.</span><a href="assets/media/axiom-statics-3d.png" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
+<figure class="prototype-slide axiom-gallery-slide" data-slide hidden><a href="assets/media/axiom-statics-2d.png" target="_blank" rel="noopener"><img src="assets/media/axiom-statics-2d.png" alt="Axiom planar truss showing member tension and compression and support reactions" loading="lazy" /></a><figcaption><strong>Planar truss · tension and compression</strong><span>The symmetric example shows 5 kN support reactions, a 5 kN member in tension, and two 7.07 kN members in compression. The diagram makes the force balance visible alongside the numerical solution.</span><a href="assets/media/axiom-statics-2d.png" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
+<figure class="prototype-slide axiom-gallery-slide" data-slide hidden><a href="assets/media/axiom-surface.png" target="_blank" rel="noopener"><img src="assets/media/axiom-surface.png" alt="Axiom focused 3D plot of z equals sin x cos y" loading="lazy" /></a><figcaption><strong>From an equation to a surface</strong><span>The rotatable plot of z = sin(x) cos(y) makes a function of two variables tangible. It is a useful starting point for studying slopes, partial derivatives, and how a field changes across a surface.</span><a href="assets/media/axiom-surface.png" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
+<figure class="prototype-slide axiom-gallery-slide" data-slide hidden><a href="assets/media/axiom-workspace.jpg" target="_blank" rel="noopener"><img src="assets/media/axiom-workspace.jpg" alt="Axiom notebook with calculus notes and a reference PDF side by side" loading="lazy" /></a><figcaption><strong>Working mathematics beside its reference</strong><span>My multivariable-calculus notebook keeps derivations, a surface plot, and a reference PDF in the same workspace. The examples connect calculus and mechanics to the mathematical foundations of my simulation and hardware work.</span><a href="assets/media/axiom-workspace.jpg" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
+<div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous Axiom screenshot">←</button><span class="carousel-count" aria-live="polite">1 / 4</span><button type="button" data-direction="1" aria-label="Next Axiom screenshot">→</button></div>
+</section><p class="prototype-status">Actual screenshots from Axiom. Trusses are demonstration problems; the notebook shows working study notes.</p>
+</article>
+
+
+        <article class="project-card reveal">
+          <div class="project-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-30 12 12)"/></svg>
+          </div>
+          <h3>Mixture of Agents Deep Research System</h3>
+          <span class="project-date">2025–2026</span>
+          <p>On-device system using a centralized reasoner and specialist sub-models, matching the performance of cloud-hosted monolithic systems.</p>
+          <p>Integrated browser use, computer use, fact-checking, and verified output generation entirely on-device.</p>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-2 3-2 6 0 9M12 22c2-3 2-6 0-9M2 12c3-2 6-2 9 0M22 12c-3 2-6 2-9 0"/><circle cx="12" cy="12" r="2.4"/></svg>
+          </div>
+          <figure class="project-media"><img class="soft-arm-upright" src="assets/media/soft-arm-assembly.jpg" alt="Segmented white soft robot arm mounted on its black actuation base" width="1200" height="1600" loading="lazy" /></figure><h3>Soft Robotics Arm</h3>
+          <span class="project-date">2024–2026</span>
+          <p>3-cable TPU-segment arm using differential cable tension and material flexibility for full 3D spatial movement.</p>
+          <p>Developing a VLM + heuristic solver control approach alongside pose-driven actuation methods.</p>
+          <a class="media-link" href="#soft-arm-demos">See the build and control demos ↓</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13h2l1.5-4h11L19 13h2M3 13v3a1 1 0 0 0 1 1h1M21 13v3a1 1 0 0 1-1 1h-1M5 17a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0Zm11 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0Z"/></svg>
+          </div>
+          <h3>Active Aerodynamics Testbed (RC Car)</h3>
+          <span class="project-date">2023–2026</span>
+          <p>RC car with an active downforce fan, DRS, on-device AI perception, and an ECU running on a repurposed smartphone.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Research &amp; Publications</span>
+        <h2>Ideas tested rigorously, written up honestly.</h2>
+      </div>
+
+      <div class="research-list">
+        <article class="research-card featured reveal">
+          <div class="research-badge">Published</div>
+          <h3>Beyond the Haystack: Sensitivity to Context in Legal Reference Recall</h3>
+          <p class="research-meta">NLLP 2025 Workshop @ EMNLP · Third Author · Accepted 2025</p>
+          <ul>
+            <li>Introduced an evaluation framework measuring LLM recall from U.S. court opinion briefings.</li>
+            <li>Exposed limitations of standard long-context benchmarks such as Needle in a Haystack across three naturalistic legal recall tasks.</li>
+          </ul>
+        </article>
+
+        <article class="research-card reveal">
+          <h3>Physics-Informed Neural Network Research</h3>
+          <p class="research-meta">Senior Year · 2025–2026</p>
+          <ul>
+            <li>Achieved 117× faster inference than a finite-difference reference in project benchmarks, with 97% mass-conservation adherence.</li>
+            <li>Used the 1D Saint-Venant continuity equation as a training constraint to encourage physically consistent flood forecasts.</li>
+            <li>2nd Place, NJ State Science Fair — Computer Science Division.</li>
+          </ul>
+        </article>
+
+        <article class="research-card reveal">
+          <h3>Multi-Tiered Drone Swarm Research</h3>
+          <p class="research-meta">Junior Year · 2024–2025</p>
+          <ul>
+            <li>Developed reinforcement learning models for autonomous multi-agent wildfire detection, combining robotics, computer vision, and environmental modeling.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+
+<section class="build-gallery" id="soft-arm-demos" aria-labelledby="demos-title"><div class="section-head"><span class="section-kicker">Inside the build</span><h3 id="demos-title">Soft robotics, from assembly to motion.</h3><p>Prototype photos and bench experiments. All videos are silent.</p></div><div class="demo-grid"><figure class="demo-card"><img src="assets/media/soft-arm-early-prototype.jpg" alt="Early segmented soft-arm prototype with a green and white base" loading="lazy" /><figcaption><strong>Early prototype</strong><span>The first assembly and cable-driven arm.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-bending.jpg" aria-label="Cable-driven bending, silent video"><source src="assets/media/soft-arm-bending.mp4" type="video/mp4" /></video><figcaption><strong>Cable-driven bending</strong><span>Differential cable tension bends the compliant arm.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-compliance.jpg" aria-label="Material compliance, silent video"><source src="assets/media/soft-arm-compliance.mp4" type="video/mp4" /></video><figcaption><strong>Material compliance</strong><span>A close look at the segmented arm and its flexibility.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-trajectory.jpg" aria-label="Trajectory experiment, silent video"><source src="assets/media/soft-arm-trajectory.mp4" type="video/mp4" /></video><figcaption><strong>Trajectory experiment</strong><span>Bench experiment alongside a trajectory visualization.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-response.jpg" aria-label="Arm response, silent video"><source src="assets/media/soft-arm-response.mp4" type="video/mp4" /></video><figcaption><strong>Arm response</strong><span>A short look at the prototype in motion.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-pose-control.jpg" aria-label="Pose-driven control experiment, silent video"><source src="assets/media/soft-arm-pose-control.mp4" type="video/mp4" /></video><figcaption><strong>Pose-driven control experiment</strong><span>Hand-pose input and the arm prototype during a control experiment.</span></figcaption></figure></div><details class="demo-more"><summary>Watch the project demonstration</summary><figure class="demo-card demo-wide"><video controls muted playsinline preload="none" poster="assets/media/engineering-demo.jpg" aria-label="Project demonstration, silent video"><source src="assets/media/engineering-demo.mp4" type="video/mp4" /></video><figcaption><strong>Project demonstration</strong><span>A longer look at the workbench demonstration.</span></figcaption></figure></details></section>
+
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-kicker">01 — About</span>
+        <span class="section-kicker">About</span>
         <h2>A builder who tests ideas against reality.</h2>
       </div>
       <div class="about-grid">
@@ -133,73 +239,14 @@
     </div>
   </section>
 
-  <!-- CREDENTIALS: EDUCATION + TEST SCORES -->
+  <!-- EDUCATION & TRAINING -->
   <section id="credentials" class="section section-alt">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="section-kicker">02 — Credentials</span>
-        <h2>Education, training &amp; standardized scores.</h2>
-      </div>
-
+      <div class="section-head reveal"><span class="section-kicker">Education &amp; training</span><h2>The foundation behind the work.</h2></div>
       <div class="edu-grid">
-        <div class="edu-card reveal">
-          <div class="edu-card-top">
-            <h3>Rutgers University</h3>
-            <span class="edu-date">Aug 2026 – May 2030</span>
-          </div>
-          <p class="edu-sub">B.S. Mechanical Engineering</p>
-          <p class="edu-loc">New Brunswick, NJ</p>
-        </div>
-        <div class="edu-card reveal">
-          <div class="edu-card-top">
-            <h3>Edison Academy Magnet School</h3>
-            <span class="edu-date">Class of 2026</span>
-          </div>
-          <p class="edu-sub">12 AP Examinations Completed</p>
-          <p class="edu-loc">Edison, NJ</p>
-        </div>
-      </div>
-
-      <p class="reveal"><strong>Safety training:</strong> OSHA-10 completed.</p>
-
-      <div class="scores-block reveal">
-        <div class="sat-card">
-          <div class="sat-total">
-            <span class="sat-num">1580</span>
-            <span class="sat-of">/ 1600</span>
-          </div>
-          <div class="sat-bars">
-            <div class="sat-bar-row">
-              <span class="sat-bar-label">Math</span>
-              <div class="sat-bar-track"><div class="sat-bar-fill" style="--pct:100%"></div></div>
-              <span class="sat-bar-score">800</span>
-            </div>
-            <div class="sat-bar-row">
-              <span class="sat-bar-label">Reading &amp; Writing</span>
-              <div class="sat-bar-track"><div class="sat-bar-fill" style="--pct:97.5%"></div></div>
-              <span class="sat-bar-score">780</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="ap-card">
-          <h3 class="ap-heading">AP Examinations <span>— 12 exams total</span></h3>
-          <div class="ap-group">
-            <span class="ap-score-badge five">5</span>
-            <div class="ap-pills">
-              <span>Physics C: Mechanics</span><span>Physics C: E&amp;M</span><span>Calculus BC</span>
-              <span>Statistics</span><span>Physics 1</span><span>Literature</span>
-              <span>Psychology</span><span>APUSH</span>
-            </div>
-          </div>
-          <div class="ap-group">
-            <span class="ap-score-badge four">4</span>
-            <div class="ap-pills">
-              <span>Biology</span><span>Chemistry</span><span>English Language</span>
-              <span>Microeconomics</span><span>Macroeconomics</span>
-            </div>
-          </div>
-        </div>
+        <article class="edu-card reveal"><span class="edu-date">2026–2030 · Current</span><h3>Rutgers University</h3><p class="edu-sub">Mechanical Engineering</p><p class="edu-loc">New Brunswick, NJ</p></article>
+        <article class="edu-card reveal"><span class="edu-date">Class of 2026</span><h3>Edison Academy Magnet School</h3><p class="edu-loc">Edison, NJ</p></article>
+        <article class="edu-card reveal"><span class="edu-date">Safety training</span><h3>OSHA-10</h3><p class="edu-sub">Completed</p><p class="edu-loc">Workplace safety training</p></article>
       </div>
     </div>
   </section>
@@ -208,7 +255,7 @@
   <section id="awards" class="section">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-kicker">03 — Competitions &amp; Awards</span>
+        <span class="section-kicker">Recognition</span>
         <h2>Recognition earned on the merit of the work.</h2>
       </div>
 
@@ -297,116 +344,11 @@
     </div>
   </section>
 
-  <!-- RESEARCH -->
-  <section id="research" class="section section-alt">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-kicker">04 — Research &amp; Publications</span>
-        <h2>Ideas tested rigorously, written up honestly.</h2>
-      </div>
-
-      <div class="research-list">
-        <article class="research-card featured reveal">
-          <div class="research-badge">Published</div>
-          <h3>Beyond the Haystack: Sensitivity to Context in Legal Reference Recall</h3>
-          <p class="research-meta">NLLP 2025 Workshop @ EMNLP · Third Author · Accepted 2025</p>
-          <ul>
-            <li>Introduced an evaluation framework measuring LLM recall from U.S. court opinion briefings.</li>
-            <li>Exposed limitations of standard long-context benchmarks such as Needle in a Haystack across three naturalistic legal recall tasks.</li>
-          </ul>
-        </article>
-
-        <article class="research-card reveal">
-          <h3>Physics-Informed Neural Network Research</h3>
-          <p class="research-meta">Senior Year · 2025–2026</p>
-          <ul>
-            <li>Achieved 117× faster inference than a finite-difference reference in project benchmarks, with 97% mass-conservation adherence.</li>
-            <li>Used the 1D Saint-Venant continuity equation as a training constraint to encourage physically consistent flood forecasts.</li>
-            <li>2nd Place, NJ State Science Fair — Computer Science Division.</li>
-          </ul>
-        </article>
-
-        <article class="research-card reveal">
-          <h3>Multi-Tiered Drone Swarm Research</h3>
-          <p class="research-meta">Junior Year · 2024–2025</p>
-          <ul>
-            <li>Developed reinforcement learning models for autonomous multi-agent wildfire detection, combining robotics, computer vision, and environmental modeling.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-kicker">05 — Technical Projects</span>
-        <h2>Things I've designed, built, and shipped.</h2>
-      </div>
-
-      <div class="project-grid">
-<article class="project-card prototype-feature reveal" id="samson"><span class="project-date">2026 · Designs in progress</span><h3>Bicopter prototypes</h3><p class="prototype-intro">Two aircraft concepts, from the outer shell to the engineering inside. Explore the structure, electronics, and wiring behind each design.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="Bicopter prototype views" tabindex="0"><div class="carousel-choices" aria-label="Choose a prototype view"><button type="button" data-goto="0" aria-pressed="true">Samson · Exterior</button><button type="button" data-goto="1" aria-pressed="false">Samson · Shell off</button><button type="button" data-goto="2" aria-pressed="false">Samson · Wiring</button><button type="button" data-goto="3" aria-pressed="false">Kestrel · Exterior</button><button type="button" data-goto="4" aria-pressed="false">Kestrel · Shell off</button><button type="button" data-goto="5" aria-pressed="false">Kestrel · Wiring</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 6: Samson · Exterior" ><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Exterior"><img src="assets/media/samson-bicopter.jpg" alt="The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development." loading="lazy" /></a><figcaption><strong>SA-2 Samson / PRINT1</strong><span>The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development.</span><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 6: Samson · Shell off" hidden><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Shell off"><img src="assets/media/samson-interior.jpg" alt="Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity." loading="lazy" /></a><figcaption><strong>Samson: beneath the shell</strong><span>Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity.</span><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 6: Samson · Wiring" hidden><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener" aria-label="Open full-size Samson · Wiring"><img src="assets/media/samson-wiring.png" alt="The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections." loading="lazy" /></a><figcaption><strong>Samson: flight-controller wiring</strong><span>The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections.</span><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 6: Kestrel · Exterior" hidden><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Exterior"><img src="assets/media/kestrel-exterior.jpg" alt="A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos." loading="lazy" /></a><figcaption><strong>Kestrel Mini R4</strong><span>A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos.</span><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 6: Kestrel · Shell off" hidden><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Shell off"><img src="assets/media/kestrel-interior.jpg" alt="Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe." loading="lazy" /></a><figcaption><strong>Kestrel: electronics and routing</strong><span>Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe.</span><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="5" role="group" aria-roledescription="slide" aria-label="6 of 6: Kestrel · Wiring" hidden><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Wiring"><img src="assets/media/kestrel-wiring.svg" alt="Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule." loading="lazy" /></a><figcaption><strong>Kestrel: wiring overview</strong><span>Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule.</span><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous prototype view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-direction="1" aria-label="Next prototype view">→</button></div></div><p class="prototype-status">Both are CAD prototypes; physical validation and flight testing remain ahead.</p><div class="prototype-links"><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/samson" target="_blank" rel="noopener">Samson repository ↗</a><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/kestrel-bicopter" target="_blank" rel="noopener">Kestrel repository ↗</a></div></article>
-<article class="project-card axiom-feature reveal" id="axiom">
-<div><span class="project-date">2026 · Desktop application</span><h3>Axiom — Offline Math Notebook</h3>
-<p>A notebook I built for working through mathematics: typeset equations and derivations, matrices, interactive graphs, multivariable calculus, and 2D/3D statics in one workspace.</p>
-<p>Keep a reference document beside the working notebook, explore geometry and forces, and export assignments as PDFs. Notebooks stay on the computer.</p>
-<p class="axiom-release-status">macOS release preparation: code signing and notarization in progress.</p></div>
-<section class="prototype-carousel axiom-carousel" aria-label="Axiom application screenshots" aria-roledescription="carousel">
-<div class="carousel-choices">
-<button type="button" data-goto="0" aria-pressed="true">3D mechanics</button>
-<button type="button" data-goto="1" aria-pressed="false">2D force balance</button>
-<button type="button" data-goto="2" aria-pressed="false">3D calculus</button>
-<button type="button" data-goto="3" aria-pressed="false">Notebook + reference</button>
-</div>
-<figure class="prototype-slide axiom-gallery-slide" data-slide><a href="assets/media/axiom-statics-3d.png" target="_blank" rel="noopener"><img src="assets/media/axiom-statics-3d.png" alt="Axiom 3D truss example with compression forces, reaction arrows, and a solved force table" loading="lazy" /></a><figcaption><strong>Space truss · forces in three dimensions</strong><span>Axiom’s method-of-joints view pairs the structure with joint coordinates, supports, member forces, and reaction components. Three force-balance equations per joint give 12 equations for this four-joint example.</span><a href="assets/media/axiom-statics-3d.png" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
-<figure class="prototype-slide axiom-gallery-slide" data-slide hidden><a href="assets/media/axiom-statics-2d.png" target="_blank" rel="noopener"><img src="assets/media/axiom-statics-2d.png" alt="Axiom planar truss showing member tension and compression and support reactions" loading="lazy" /></a><figcaption><strong>Planar truss · tension and compression</strong><span>The symmetric example shows 5 kN support reactions, a 5 kN member in tension, and two 7.07 kN members in compression. The diagram makes the force balance visible alongside the numerical solution.</span><a href="assets/media/axiom-statics-2d.png" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
-<figure class="prototype-slide axiom-gallery-slide" data-slide hidden><a href="assets/media/axiom-surface.png" target="_blank" rel="noopener"><img src="assets/media/axiom-surface.png" alt="Axiom focused 3D plot of z equals sin x cos y" loading="lazy" /></a><figcaption><strong>From an equation to a surface</strong><span>The rotatable plot of z = sin(x) cos(y) makes a function of two variables tangible. It is a useful starting point for studying slopes, partial derivatives, and how a field changes across a surface.</span><a href="assets/media/axiom-surface.png" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
-<figure class="prototype-slide axiom-gallery-slide" data-slide hidden><a href="assets/media/axiom-workspace.jpg" target="_blank" rel="noopener"><img src="assets/media/axiom-workspace.jpg" alt="Axiom notebook with calculus notes and a reference PDF side by side" loading="lazy" /></a><figcaption><strong>Working mathematics beside its reference</strong><span>My multivariable-calculus notebook keeps derivations, a surface plot, and a reference PDF in the same workspace. The examples connect calculus and mechanics to the mathematical foundations of my simulation and hardware work.</span><a href="assets/media/axiom-workspace.jpg" target="_blank" rel="noopener">View full-size ↗</a></figcaption></figure>
-<div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous Axiom screenshot">←</button><span class="carousel-count" aria-live="polite">1 / 4</span><button type="button" data-direction="1" aria-label="Next Axiom screenshot">→</button></div>
-</section><p class="prototype-status">Actual screenshots from Axiom. Trusses are demonstration problems; the notebook shows working study notes.</p>
-</article>
-
-
-        <article class="project-card reveal">
-          <div class="project-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-30 12 12)"/></svg>
-          </div>
-          <h3>Mixture of Agents Deep Research System</h3>
-          <span class="project-date">2025–2026</span>
-          <p>On-device system using a centralized reasoner and specialist sub-models, matching the performance of cloud-hosted monolithic systems.</p>
-          <p>Integrated browser use, computer use, fact-checking, and verified output generation entirely on-device.</p>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-2 3-2 6 0 9M12 22c2-3 2-6 0-9M2 12c3-2 6-2 9 0M22 12c-3 2-6 2-9 0"/><circle cx="12" cy="12" r="2.4"/></svg>
-          </div>
-          <figure class="project-media"><img class="soft-arm-upright" src="assets/media/soft-arm-assembly.jpg" alt="Segmented white soft robot arm mounted on its black actuation base" width="1200" height="1600" loading="lazy" /></figure><h3>Soft Robotics Arm</h3>
-          <span class="project-date">2024–2026</span>
-          <p>3-cable TPU-segment arm using differential cable tension and material flexibility for full 3D spatial movement.</p>
-          <p>Developing a VLM + heuristic solver control approach alongside pose-driven actuation methods.</p>
-          <a class="media-link" href="#soft-arm-demos">See the build and control demos ↓</a>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13h2l1.5-4h11L19 13h2M3 13v3a1 1 0 0 0 1 1h1M21 13v3a1 1 0 0 1-1 1h-1M5 17a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0Zm11 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0Z"/></svg>
-          </div>
-          <h3>Active Aerodynamics Testbed (RC Car)</h3>
-          <span class="project-date">2023–2026</span>
-          <p>RC car with an active downforce fan, DRS, on-device AI perception, and an ECU running on a repurposed smartphone.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-<section class="build-gallery" id="soft-arm-demos" aria-labelledby="demos-title"><div class="section-head"><span class="section-kicker">Inside the build</span><h3 id="demos-title">Soft robotics, from assembly to motion.</h3><p>Prototype photos and bench experiments. All videos are silent.</p></div><div class="demo-grid"><figure class="demo-card"><img src="assets/media/soft-arm-early-prototype.jpg" alt="Early segmented soft-arm prototype with a green and white base" loading="lazy" /><figcaption><strong>Early prototype</strong><span>The first assembly and cable-driven arm.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-bending.jpg" aria-label="Cable-driven bending, silent video"><source src="assets/media/soft-arm-bending.mp4" type="video/mp4" /></video><figcaption><strong>Cable-driven bending</strong><span>Differential cable tension bends the compliant arm.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-compliance.jpg" aria-label="Material compliance, silent video"><source src="assets/media/soft-arm-compliance.mp4" type="video/mp4" /></video><figcaption><strong>Material compliance</strong><span>A close look at the segmented arm and its flexibility.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-trajectory.jpg" aria-label="Trajectory experiment, silent video"><source src="assets/media/soft-arm-trajectory.mp4" type="video/mp4" /></video><figcaption><strong>Trajectory experiment</strong><span>Bench experiment alongside a trajectory visualization.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-response.jpg" aria-label="Arm response, silent video"><source src="assets/media/soft-arm-response.mp4" type="video/mp4" /></video><figcaption><strong>Arm response</strong><span>A short look at the prototype in motion.</span></figcaption></figure><figure class="demo-card"><video controls muted playsinline preload="none" poster="assets/media/soft-arm-pose-control.jpg" aria-label="Pose-driven control experiment, silent video"><source src="assets/media/soft-arm-pose-control.mp4" type="video/mp4" /></video><figcaption><strong>Pose-driven control experiment</strong><span>Hand-pose input and the arm prototype during a control experiment.</span></figcaption></figure></div><details class="demo-more"><summary>Watch the project demonstration</summary><figure class="demo-card demo-wide"><video controls muted playsinline preload="none" poster="assets/media/engineering-demo.jpg" aria-label="Project demonstration, silent video"><source src="assets/media/engineering-demo.mp4" type="video/mp4" /></video><figcaption><strong>Project demonstration</strong><span>A longer look at the workbench demonstration.</span></figcaption></figure></details></section>
   <!-- VOLUNTEERING / SERVICE -->
   <section id="service" class="section section-alt">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-kicker">06 — Volunteering &amp; Leadership</span>
+        <span class="section-kicker">Volunteering &amp; Leadership</span>
         <h2>700+ confirmed hours of service.</h2>
       </div>
 
@@ -438,7 +380,7 @@
   <section id="contact" class="section contact-section">
     <div class="container contact-inner">
       <div class="reveal">
-        <span class="section-kicker">07 — Contact</span>
+        <span class="section-kicker">Contact</span>
         <h2>Let's build something worth testing.</h2>
         <p class="contact-sub">Open to research collaborations, competitions, and interesting problems.</p>
       </div>

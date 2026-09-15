@@ -70,21 +70,6 @@
   );
   revealEls.forEach(function (el) { revealObserver.observe(el); });
 
-  // ---------- SAT bar fill on scroll ----------
-  var satBars = document.querySelectorAll(".sat-bar-fill");
-  var barObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          barObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-  satBars.forEach(function (el) { barObserver.observe(el); });
-
   // ---------- Counting stat numbers ----------
   var counters = document.querySelectorAll("[data-count]");
   var animateCount = function (el) {
