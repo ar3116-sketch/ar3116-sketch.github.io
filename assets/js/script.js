@@ -4,7 +4,7 @@
   // ---------- Theme toggle ----------
   var root = document.documentElement;
   var themeBtn = document.getElementById("theme-toggle");
-  var stored = localStorage.getItem("theme");
+  var stored = localStorage.getItem("portfolio-theme-v2");
   if (stored) root.setAttribute("data-theme", stored);
 
   themeBtn.addEventListener("click", function () {
@@ -13,7 +13,7 @@
     var effectiveIsDark = current ? current === "dark" : prefersDark;
     var next = effectiveIsDark ? "light" : "dark";
     root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
+    localStorage.setItem("portfolio-theme-v2", next);
   });
 
   // ---------- Header scroll state ----------
@@ -28,11 +28,13 @@
   var navToggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("nav");
   navToggle.addEventListener("click", function () {
-    nav.classList.toggle("open");
+    var open = nav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(open));
   });
   nav.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
       nav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
     });
   });
 
