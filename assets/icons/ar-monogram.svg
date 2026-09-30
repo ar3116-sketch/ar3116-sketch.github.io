@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <title>Advaith Renjith AR monogram</title>
+  <rect width="100" height="100" rx="20" fill="#17191c"/>
+  <g stroke="#f7f7f5" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M15 78 35 21 56 81"/>
+    <path d="M26 54H62C76 54 84 49 84 37.5S76 21 62 21H35"/>
+    <path d="m62 54 21 24" stroke-linecap="butt"/>
+  </g>
+</svg>
