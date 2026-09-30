@@ -674,3 +674,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid c
  .project-card .prototype-links .btn { width:100%; justify-content:center; }.bluebird-funding .btn { width:100%; justify-content:center; }
  .contact-actions .btn { font-size:9px; padding:14px; }.build-gallery { padding-left:16px; padding-right:16px; }
 }
+
+.funding-contact { flex: 0 1 390px; min-width: 0; }
+.funding-contact>label { display: block; font-size: 12px; color: #c2c4c1; margin: 14px 0 6px; }
+.funding-email-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.funding-email-row input { flex: 1 1 220px; min-width: 0; width: 100%; background: #303233; color: #fff; border: 1px solid #757975; padding: 10px; border-radius: 0; font: 11px var(--font-mono); }
+.funding-email-row .btn { padding: 10px; font-size: 9px; }
+#funding-copy-status { display: block; min-height: 18px; font: 11px var(--font-mono); margin-top: 6px; color: #e7e9e5; }
+@media(max-width:800px) { .funding-contact { flex-basis: auto; width: 100%; } }

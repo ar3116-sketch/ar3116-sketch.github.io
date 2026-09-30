@@ -106,6 +106,22 @@
   );
   counters.forEach(function (el) { counterObserver.observe(el); });
 
+  // ---------- Funding contact: independent of a device email handler ----------
+  var copyFunding = document.getElementById("copy-funding-email");
+  var fundingEmail = document.getElementById("funding-email");
+  var fundingStatus = document.getElementById("funding-copy-status");
+  copyFunding.addEventListener("click", async function () {
+    try {
+      if (!navigator.clipboard) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(fundingEmail.value);
+      fundingStatus.textContent = "Email copied";
+    } catch (_) {
+      fundingEmail.focus();
+      fundingEmail.select();
+      fundingStatus.textContent = "Email selected. Copy it to use in your email app.";
+    }
+  });
+
   // ---------- Footer year ----------
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
