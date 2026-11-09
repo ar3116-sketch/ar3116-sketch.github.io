@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/style.css?v=20261017-projects" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261109-math" />
 </head>
 <body>
 
@@ -23,6 +23,7 @@
   <div class="container header-inner">
     <a href="#top" class="logo" aria-label="Advaith Renjith home">AR<span class="logo-label"> / ENGINEERING</span></a>
     <nav class="nav" id="nav">
+      <a href="#cad" data-nav>3D</a>
       <a href="#projects" data-nav>Projects</a>
       <a href="#research" data-nav>Research</a>
       <a href="#about" data-nav>About</a>
@@ -99,6 +100,46 @@
     </div>
   </section>
 
+  <!-- INTERACTIVE CAD -->
+  <section id="cad" class="section cad-section" aria-labelledby="cad-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Interactive CAD</span>
+        <h2 id="cad-title">The real models, straight out of FreeCAD. Drag to look around.</h2>
+      </div>
+
+      <div class="cad-viewer" data-cad>
+        <div class="cad-tabs" role="tablist" aria-label="Choose a model">
+          <button type="button" role="tab" id="cad-tab-bluebird" aria-controls="cad-stage" aria-selected="true" data-model="bluebird">BLUEBIRD</button>
+          <button type="button" role="tab" id="cad-tab-samson" aria-controls="cad-stage" aria-selected="false" tabindex="-1" data-model="samson">Samson</button>
+          <button type="button" role="tab" id="cad-tab-kestrel" aria-controls="cad-stage" aria-selected="false" tabindex="-1" data-model="kestrel">Kestrel</button>
+          <button type="button" role="tab" id="cad-tab-fancar" aria-controls="cad-stage" aria-selected="false" tabindex="-1" data-model="fancar">RC Fan Car</button>
+        </div>
+
+        <div class="cad-stage" id="cad-stage" role="tabpanel" aria-labelledby="cad-tab-bluebird">
+          <div class="cad-info" aria-live="polite">
+            <span class="cad-kicker" data-cad-field="kicker">Survey drone · 2026</span>
+            <strong class="cad-name" data-cad-field="name">BLUEBIRD</strong>
+            <p class="cad-blurb" data-cad-field="blurb">A 1.8 m blended-wing survey aircraft designed around an ordinary Android phone.</p>
+            <dl class="cad-specs" data-cad-field="specs"></dl>
+            <div class="cad-controls">
+              <button type="button" class="btn btn-ghost" data-cad-action="rotate" aria-pressed="true">Auto-rotate</button>
+              <button type="button" class="btn btn-ghost" data-cad-action="reset">Reset view</button>
+              <a class="btn btn-ghost" data-cad-field="link" href="#bluebird">Read the project ↓</a>
+            </div>
+          </div>
+          <div class="cad-canvas">
+            <model-viewer class="cad-model" loading="lazy" reveal="auto" camera-controls disable-zoom disable-pan touch-action="pan-y" interaction-prompt="none" auto-rotate auto-rotate-delay="0" rotation-per-second="14deg" shadow-intensity="0.9" shadow-softness="0.8" environment-image="neutral" tone-mapping="neutral" exposure="1.05" alt="Interactive 3D model of BLUEBIRD">
+              <div class="cad-loading" slot="progress-bar" aria-hidden="true"><span></span></div>
+            </model-viewer>
+            <p class="cad-hint" aria-hidden="true">Drag to orbit</p>
+            <noscript><p class="cad-hint">The interactive models need JavaScript.</p></noscript>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="projects" class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -138,10 +179,11 @@
           <div class="prototype-links">
             <a class="btn btn-primary" href="https://ar3116-sketch.github.io/bluebird/" target="_blank" rel="noopener">Explore BLUEBIRD ↗</a>
             <a class="btn btn-ghost" href="https://ar3116-sketch.github.io/bluebird/assets/bluebird_whitepaper.pdf" target="_blank" rel="noopener">Read the white paper ↗</a>
+            <a class="btn btn-ghost" href="#cad" data-cad-open="bluebird">Rotate it in 3D ↑</a>
           </div>
         </article>
 
-<article class="project-card prototype-feature reveal" id="samson"><span class="project-date">2026 · Designs in progress</span><h3>Bicopter prototypes</h3><p class="prototype-intro">Two aircraft concepts, from the outer shell to the engineering inside. Explore the structure, electronics, and wiring behind each design.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="Bicopter prototype views" tabindex="0"><div class="carousel-choices" aria-label="Choose a prototype view"><button type="button" data-goto="0" aria-pressed="true">Samson · Exterior</button><button type="button" data-goto="1" aria-pressed="false">Samson · Shell off</button><button type="button" data-goto="2" aria-pressed="false">Samson · Wiring</button><button type="button" data-goto="3" aria-pressed="false">Kestrel · Exterior</button><button type="button" data-goto="4" aria-pressed="false">Kestrel · Shell off</button><button type="button" data-goto="5" aria-pressed="false">Kestrel · Wiring</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 6: Samson · Exterior" ><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Exterior"><img src="assets/media/samson-bicopter.jpg" alt="The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development." loading="lazy" /></a><figcaption><strong>SA-2 Samson / PRINT1</strong><span>The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development.</span><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 6: Samson · Shell off" hidden><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Shell off"><img src="assets/media/samson-interior.jpg" alt="Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity." loading="lazy" /></a><figcaption><strong>Samson: beneath the shell</strong><span>Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity.</span><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 6: Samson · Wiring" hidden><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener" aria-label="Open full-size Samson · Wiring"><img src="assets/media/samson-wiring.png" alt="The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections." loading="lazy" /></a><figcaption><strong>Samson: flight-controller wiring</strong><span>The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections.</span><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 6: Kestrel · Exterior" hidden><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Exterior"><img src="assets/media/kestrel-exterior.jpg" alt="A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos." loading="lazy" /></a><figcaption><strong>Kestrel Mini R4</strong><span>A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos.</span><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 6: Kestrel · Shell off" hidden><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Shell off"><img src="assets/media/kestrel-interior.jpg" alt="Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe." loading="lazy" /></a><figcaption><strong>Kestrel: electronics and routing</strong><span>Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe.</span><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="5" role="group" aria-roledescription="slide" aria-label="6 of 6: Kestrel · Wiring" hidden><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Wiring"><img src="assets/media/kestrel-wiring.svg" alt="Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule." loading="lazy" /></a><figcaption><strong>Kestrel: wiring overview</strong><span>Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule.</span><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous prototype view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-direction="1" aria-label="Next prototype view">→</button></div></div><p class="prototype-status">Both are CAD prototypes; physical validation and flight testing remain ahead.</p><div class="prototype-links"><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/samson" target="_blank" rel="noopener">Samson repository ↗</a><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/kestrel-bicopter" target="_blank" rel="noopener">Kestrel repository ↗</a></div></article>
+<article class="project-card prototype-feature reveal" id="samson"><span class="project-date">2026 · Designs in progress</span><h3>Bicopter prototypes</h3><p class="prototype-intro">Two aircraft concepts, from the outer shell to the engineering inside. Explore the structure, electronics, and wiring behind each design.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="Bicopter prototype views" tabindex="0"><div class="carousel-choices" aria-label="Choose a prototype view"><button type="button" data-goto="0" aria-pressed="true">Samson · Exterior</button><button type="button" data-goto="1" aria-pressed="false">Samson · Shell off</button><button type="button" data-goto="2" aria-pressed="false">Samson · Wiring</button><button type="button" data-goto="3" aria-pressed="false">Kestrel · Exterior</button><button type="button" data-goto="4" aria-pressed="false">Kestrel · Shell off</button><button type="button" data-goto="5" aria-pressed="false">Kestrel · Wiring</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 6: Samson · Exterior" ><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Exterior"><img src="assets/media/samson-bicopter.jpg" alt="The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development." loading="lazy" /></a><figcaption><strong>SA-2 Samson / PRINT1</strong><span>The green outer-shell concept with two independently tilting rotor assemblies. CAD prototype in development.</span><a href="assets/media/samson-bicopter.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 6: Samson · Shell off" hidden><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Samson · Shell off"><img src="assets/media/samson-interior.jpg" alt="Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity." loading="lazy" /></a><figcaption><strong>Samson: beneath the shell</strong><span>Shell removed to show the structural frame, tilt linkages, electronics, and routed wiring. The orange marker indicates the calculated center of gravity.</span><a href="assets/media/samson-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 6: Samson · Wiring" hidden><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener" aria-label="Open full-size Samson · Wiring"><img src="assets/media/samson-wiring.png" alt="The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections." loading="lazy" /></a><figcaption><strong>Samson: flight-controller wiring</strong><span>The E-P6.1 controller schematic documents receiver input, motor and tilt-servo commands, input filtering, and auxiliary connections.</span><a href="assets/media/samson-wiring.png" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 6: Kestrel · Exterior" hidden><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Exterior"><img src="assets/media/kestrel-exterior.jpg" alt="A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos." loading="lazy" /></a><figcaption><strong>Kestrel Mini R4</strong><span>A smaller matte-black bicopter fit prototype, with two lift motors and two independent tilt servos.</span><a href="assets/media/kestrel-exterior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 6: Kestrel · Shell off" hidden><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Shell off"><img src="assets/media/kestrel-interior.jpg" alt="Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe." loading="lazy" /></a><figcaption><strong>Kestrel: electronics and routing</strong><span>Shell removed to expose the component layout, motor wiring, battery packaging, and control connections modeled inside the airframe.</span><a href="assets/media/kestrel-interior.jpg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="5" role="group" aria-roledescription="slide" aria-label="6 of 6: Kestrel · Wiring" hidden><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener" aria-label="Open full-size Kestrel · Wiring"><img src="assets/media/kestrel-wiring.svg" alt="Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule." loading="lazy" /></a><figcaption><strong>Kestrel: wiring overview</strong><span>Power and signal connections for the compact prototype, documented alongside its 42-route wire schedule.</span><a href="assets/media/kestrel-wiring.svg" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous prototype view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-direction="1" aria-label="Next prototype view">→</button></div></div><p class="prototype-status">Both are CAD prototypes; physical validation and flight testing remain ahead.</p><div class="prototype-links"><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/samson" target="_blank" rel="noopener">Samson repository ↗</a><a class="btn btn-ghost" href="https://github.com/ar3116-sketch/kestrel-bicopter" target="_blank" rel="noopener">Kestrel repository ↗</a><a class="btn btn-ghost" href="#cad" data-cad-open="samson">Samson in 3D ↑</a><a class="btn btn-ghost" href="#cad" data-cad-open="kestrel">Kestrel in 3D ↑</a></div></article>
 <article class="project-card axiom-feature reveal" id="axiom">
 <div><span class="project-date">2026 · Desktop application</span><h3>Axiom — Offline Math Notebook</h3>
 <p>A notebook I built for working through mathematics: typeset equations and derivations, matrices, interactive graphs, multivariable calculus, and 2D/3D statics in one workspace.</p>
@@ -161,8 +203,8 @@
 <div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous Axiom screenshot">←</button><span class="carousel-count" aria-live="polite">1 / 4</span><button type="button" data-direction="1" aria-label="Next Axiom screenshot">→</button></div>
 </section><p class="prototype-status">Actual screenshots from Axiom. Trusses are demonstration problems; the notebook shows working study notes.</p>
 </article>
-<article class="project-card prototype-feature reveal" id="chassis"><span class="project-date">2026 · Rutgers Formula Racing · Chassis</span><h3>Chassis optimizer with a Timoshenko beam solver</h3><p class="prototype-intro">For my Rutgers Formula Racing chassis new-member project, I didn’t lay out the frame by hand. I wrote a tool that designs the tube frame around the fixed hoops and suspension points, checks it against the FSAE rules and driver templates, builds it in SolidWorks, and scores it with the team’s torsional-rigidity (TR) procedure.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="Chassis optimizer views" tabindex="0"><div class="carousel-choices" aria-label="Choose a view"><button type="button" data-goto="0" aria-pressed="true">Design 009c</button><button type="button" data-goto="1" aria-pressed="false">Load case</button><button type="button" data-goto="2" aria-pressed="false">Shear correction</button><button type="button" data-goto="3" aria-pressed="false">Why X-braces</button><button type="button" data-goto="4" aria-pressed="false">Trade-off</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 5: Design 009c"><a href="assets/media/rfr-009c-solidworks.webp" target="_blank" rel="noopener" aria-label="Open full-size Design 009c"><img src="assets/media/rfr-009c-solidworks.webp" alt="SolidWorks model of the optimized tube-frame chassis 009c, with red keep-out solids inside" loading="lazy" /></a><figcaption><strong>Design 009c in SolidWorks</strong><span>116 tubes in team-stocked sizes, each coped in weld order. The red solids are the packaging keep-outs (battery, motor, cockpit, footwell) that no tube may enter. It scored 3,098 lb·ft/deg at 75.49 lb, 44% more TR per pound than the team’s best frame at slightly lower weight.</span><a href="assets/media/rfr-009c-solidworks.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 5: Load case" hidden><a href="assets/media/rfr-load-case.webp" target="_blank" rel="noopener" aria-label="Open full-size Load case"><img src="assets/media/rfr-load-case.webp" alt="Diagram of the torsion test: rear suspension nodes fixed, front nodes loaded up and down, rotation probes on two front bars" loading="lazy" /></a><figcaption><strong>The score: the team’s torsion test</strong><span>The 8 rear pickups are fixed, 100 lbf pushes up on the 4 left front pickups and down on the 4 right ones, and the twist is read at two front bars. TR is the 545 lb·ft torque divided by that angle, and the score is TR per pound.</span><a href="assets/media/rfr-load-case.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 5: Shear correction" hidden><a href="assets/media/rfr-timoshenko-correction.webp" target="_blank" rel="noopener" aria-label="Open full-size Shear correction"><img src="assets/media/rfr-timoshenko-correction.webp" alt="Two plots: the Timoshenko shear parameter falling with tube length for three tube sizes, and Euler–Bernoulli versus Timoshenko bending stiffness for a 1.000 by 0.049 inch tube" loading="lazy" /></a><figcaption><strong>Why the solver uses Timoshenko beams</strong><span>A SolidWorks study takes minutes, so the optimizer uses its own beam model that runs in milliseconds. Every tube is a 3D Timoshenko beam with the same shear factor as SolidWorks (k = 0.5). Short tubes deflect in shear as well as bending, so an Euler–Bernoulli model would overrate them by 19% at 6 in and 44% at 4 in, and the optimizer would exploit that. The model matched SolidWorks within 1% on four frames.</span><a href="assets/media/rfr-timoshenko-correction.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 5: Why X-braces" hidden><a href="assets/media/rfr-box-example.webp" target="_blank" rel="noopener" aria-label="Open full-size Why X-braces"><img src="assets/media/rfr-box-example.webp" alt="Six box frames with increasing bracing and their torsional stiffness per pound" loading="lazy" /></a><figcaption><strong>Why the frame is full of X-braces</strong><span>Torsion is carried by closed boxes. On one test bay, triangulating the sides takes TR per pound from 17 to 204, and closing the top and bottom with 1.000 in X-braces takes it to 463. One diagonal per face is not enough.</span><a href="assets/media/rfr-box-example.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 5: Trade-off" hidden><a href="assets/media/rfr-tradeoff.webp" target="_blank" rel="noopener" aria-label="Open full-size Trade-off"><img src="assets/media/rfr-tradeoff.webp" alt="Scatter plot of TR per pound against frame weight for every valid design the search tried" loading="lazy" /></a><figcaption><strong>Every design the search tried</strong><span>TR per pound against weight for every rule-valid frame in the final search, with the SolidWorks results. At the team’s target weight the search finds about 40; heavier frames go higher.</span><a href="assets/media/rfr-tradeoff.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 5</span><button type="button" data-direction="1" aria-label="Next view">→</button></div></div><div class="feature-notes"><p><strong>How it works.</strong> A ground structure of 630–810 candidate tubes and 270–350 X-braces is drawn between the fixed points. One adjoint solve ranks every candidate at once, and Sherman–Morrison–Woodbury updates score each add, remove or resize exactly in about a millisecond without re-solving the frame. A tabu search and a small integer program pick compatible tubes, random kicks escape local optima, and an outer pattern search moves 8 node positions within the rule windows.</p><p><strong>What happened next.</strong> The tool exports a buildable SolidWorks weldment with a cut list, drawing and BOM. After I showed the method to the chassis leads, I joined the work on the 2028 frame in Ansys.</p></div><p class="prototype-status">TR figures come from the team’s SolidWorks beam study, not a physical test. Open items: the real axle position and the battery removal path.</p></article>
-<article class="project-card prototype-feature reveal" id="fan-car"><span class="project-date">2023–2026 · Active aerodynamics testbed</span><h3>RC Fan Car V2</h3><p class="prototype-intro">The current design of my active-aero testbed: a 1/10 Tamiya TT-02 turned into a Brabham BT46B-style fan car. Two blowers pull a skirted plenum under the floor down to the ground, a DRS rear wing trims balance, and four servo rockers hold ride height so the skirt seal survives as the fan load comes and goes. Every number comes from one parameter file through scripted CAD, calculations, FEA, CFD and a controls simulation.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="RC fan car views" tabindex="0"><div class="carousel-choices" aria-label="Choose a view"><button type="button" data-goto="0" aria-pressed="true">Finished car</button><button type="button" data-goto="1" aria-pressed="false">X-ray</button><button type="button" data-goto="2" aria-pressed="false">Chassis</button><button type="button" data-goto="3" aria-pressed="false">Plenum</button><button type="button" data-goto="4" aria-pressed="false">DRS wing</button><button type="button" data-goto="5" aria-pressed="false">CFD · skirt gap</button><button type="button" data-goto="6" aria-pressed="false">CFD · wing</button><button type="button" data-goto="7" aria-pressed="false">FEA</button><button type="button" data-goto="8" aria-pressed="false">Controls SIL</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 9: Finished car"><a href="assets/media/fancar-body.webp" target="_blank" rel="noopener" aria-label="Open full-size Finished car"><img src="assets/media/fancar-body.webp" alt="Red vacuum-formed body on the RC fan car with a rear wing" loading="lazy" /></a><figcaption><strong>The finished car</strong><span>FreeCAD model generated by script, with a custom vacuum-formed body. 2.16 kg, $498 build cost against a $500 budget.</span><a href="assets/media/fancar-body.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 9: X-ray" hidden><a href="assets/media/fancar-xray.webp" target="_blank" rel="noopener" aria-label="Open full-size X-ray"><img src="assets/media/fancar-xray.webp" alt="Translucent body showing the blower stack, electronics and wing underneath" loading="lazy" /></a><figcaption><strong>Through the body</strong><span>The blower stack, aero battery, sensors and servo rockers packaged under the shell. A clearance check found 0 part overlaps across 35 printed parts and 104 fasteners.</span><a href="assets/media/fancar-xray.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 9: Chassis" hidden><a href="assets/media/fancar-chassis.webp" target="_blank" rel="noopener" aria-label="Open full-size Chassis"><img src="assets/media/fancar-chassis.webp" alt="Chassis without the body showing the orange blower stack, blue printed deck and rear wing" loading="lazy" /></a><figcaption><strong>Chassis and systems</strong><span>Two 97 mm centrifugal blowers in series on an isolated deck, an ESP32-S3 controller, an IMU, barometers on the plenum and ambient air, and ride-height sensors.</span><a href="assets/media/fancar-chassis.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 9: Plenum" hidden><a href="assets/media/fancar-plenum.webp" target="_blank" rel="noopener" aria-label="Open full-size Plenum"><img src="assets/media/fancar-plenum.webp" alt="Underside view of the sealed plenum between the wheels" loading="lazy" /></a><figcaption><strong>Sealed plenum</strong><span>A 183 × 132 mm plenum sealed by 0.5 mm UHMW sliding skirts. Predicted fan downforce is 18.4 N, 0.87 of the car’s weight, at a 0.5 mm skirt gap, and it doesn’t depend on speed.</span><a href="assets/media/fancar-plenum.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 9: DRS wing" hidden><a href="assets/media/fancar-wing.webp" target="_blank" rel="noopener" aria-label="Open full-size DRS wing"><img src="assets/media/fancar-wing.webp" alt="Two-element rear wing with a servo-driven flap" loading="lazy" /></a><figcaption><strong>DRS rear wing</strong><span>A NACA 6412 main plane and 4412 flap with a micro-servo DRS. The flap hinge torque is under 1% of the servo’s stall torque.</span><a href="assets/media/fancar-wing.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="5" role="group" aria-roledescription="slide" aria-label="6 of 9: CFD · skirt gap" hidden><a href="assets/media/fancar-cfd-skirt.webp" target="_blank" rel="noopener" aria-label="Open full-size CFD · skirt gap"><img src="assets/media/fancar-cfd-skirt.webp" alt="SU2 velocity field and streamlines through a 0.5 mm skirt gap" loading="lazy" /></a><figcaption><strong>CFD: leakage under the skirt</strong><span>2-D SU2 runs of the flow through the skirt gap give the discharge coefficient (about 0.63 at the design point). Leakage sets how much fan power holds the suction.</span><a href="assets/media/fancar-cfd-skirt.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="6" role="group" aria-roledescription="slide" aria-label="7 of 9: CFD · wing" hidden><a href="assets/media/fancar-cfd-wing.webp" target="_blank" rel="noopener" aria-label="Open full-size CFD · wing"><img src="assets/media/fancar-cfd-wing.webp" alt="SU2 flow fields around the wing with the DRS closed and open" loading="lazy" /></a><figcaption><strong>CFD: DRS closed vs open</strong><span>SU2 RANS of the wing section with the flap closed and open. The closed main element separates at 30°, which the design accounts for.</span><a href="assets/media/fancar-cfd-wing.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="7" role="group" aria-roledescription="slide" aria-label="8 of 9: FEA" hidden><a href="assets/media/fancar-fea-rocker.webp" target="_blank" rel="noopener" aria-label="Open full-size FEA"><img src="assets/media/fancar-fea-rocker.webp" alt="Von Mises stress on the printed suspension rocker" loading="lazy" /></a><figcaption><strong>FEA of printed parts</strong><span>gmsh and CalculiX on six printed parts. All pass a safety factor of 2 at twice running load; the rocker shown is 8.6 MPa with a factor of 3.5.</span><a href="assets/media/fancar-fea-rocker.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="8" role="group" aria-roledescription="slide" aria-label="9 of 9: Controls SIL" hidden><a href="assets/media/fancar-sil-fan-step.webp" target="_blank" rel="noopener" aria-label="Open full-size Controls SIL"><img src="assets/media/fancar-sil-fan-step.webp" alt="Simulation plots of ride height, plenum suction and actuator offset during a fan step" loading="lazy" /></a><figcaption><strong>Controls, software in the loop</strong><span>The controllers run against a vehicle model at 1 kHz. A fan step at standstill showed the first controller sagging the car, which led to three controller fixes.</span><a href="assets/media/fancar-sil-fan-step.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 9</span><button type="button" data-direction="1" aria-label="Next view">→</button></div></div><p class="prototype-status"><strong>Analysed, not yet built in this configuration.</strong> “Pass” means the checks pass in analysis; physical testing follows the test plan in the 42-page design report.</p></article>
+<article class="project-card prototype-feature reveal" id="chassis"><span class="project-date">2026 · Rutgers Formula Racing · Chassis</span><h3>Chassis optimizer with a Timoshenko beam solver</h3><p class="prototype-intro">For my Rutgers Formula Racing chassis new-member project, I didn’t lay out the frame by hand. I wrote a tool that designs the tube frame around the fixed hoops and suspension points, checks it against the FSAE rules and driver templates, builds it in SolidWorks, and scores it with the team’s torsional-rigidity (TR) procedure.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="Chassis optimizer views" tabindex="0"><div class="carousel-choices" aria-label="Choose a view"><button type="button" data-goto="0" aria-pressed="true">Design 009c</button><button type="button" data-goto="1" aria-pressed="false">Load case</button><button type="button" data-goto="2" aria-pressed="false">Shear correction</button><button type="button" data-goto="3" aria-pressed="false">Why X-braces</button><button type="button" data-goto="4" aria-pressed="false">Trade-off</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 5: Design 009c"><a href="assets/media/rfr-009c-solidworks.webp" target="_blank" rel="noopener" aria-label="Open full-size Design 009c"><img src="assets/media/rfr-009c-solidworks.webp" alt="SolidWorks model of the optimized tube-frame chassis 009c, with red keep-out solids inside" loading="lazy" /></a><figcaption><strong>Design 009c in SolidWorks</strong><span>116 tubes in team-stocked sizes, each coped in weld order. The red solids are the packaging keep-outs (battery, motor, cockpit, footwell) that no tube may enter. It scored 3,098 lb·ft/deg at 75.49 lb, 44% more TR per pound than the team’s best frame at slightly lower weight.</span><a href="assets/media/rfr-009c-solidworks.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 5: Load case" hidden><a href="assets/media/rfr-load-case.webp" target="_blank" rel="noopener" aria-label="Open full-size Load case"><img src="assets/media/rfr-load-case.webp" alt="Diagram of the torsion test: rear suspension nodes fixed, front nodes loaded up and down, rotation probes on two front bars" loading="lazy" /></a><figcaption><strong>The score: the team’s torsion test</strong><span>The 8 rear pickups are fixed, 100 lbf pushes up on the 4 left front pickups and down on the 4 right ones, and the twist is read at two front bars. TR is the 545 lb·ft torque divided by that angle, and the score is TR per pound.</span><a href="assets/media/rfr-load-case.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 5: Shear correction" hidden><a href="assets/media/rfr-timoshenko-correction.webp" target="_blank" rel="noopener" aria-label="Open full-size Shear correction"><img src="assets/media/rfr-timoshenko-correction.webp" alt="Two plots: the Timoshenko shear parameter falling with tube length for three tube sizes, and Euler–Bernoulli versus Timoshenko bending stiffness for a 1.000 by 0.049 inch tube" loading="lazy" /></a><figcaption><strong>Why the solver uses Timoshenko beams</strong><span>A SolidWorks study takes minutes, so the optimizer uses its own beam model that runs in milliseconds. Every tube is a 3D Timoshenko beam with the same shear factor as SolidWorks (k = 0.5). Short tubes deflect in shear as well as bending, so an Euler–Bernoulli model would overrate them by 19% at 6 in and 44% at 4 in, and the optimizer would exploit that. The model matched SolidWorks within 1% on four frames.</span><a href="assets/media/rfr-timoshenko-correction.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 5: Why X-braces" hidden><a href="assets/media/rfr-box-example.webp" target="_blank" rel="noopener" aria-label="Open full-size Why X-braces"><img src="assets/media/rfr-box-example.webp" alt="Six box frames with increasing bracing and their torsional stiffness per pound" loading="lazy" /></a><figcaption><strong>Why the frame is full of X-braces</strong><span>Torsion is carried by closed boxes. On one test bay, triangulating the sides takes TR per pound from 17 to 204, and closing the top and bottom with 1.000 in X-braces takes it to 463. One diagonal per face is not enough.</span><a href="assets/media/rfr-box-example.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 5: Trade-off" hidden><a href="assets/media/rfr-tradeoff.webp" target="_blank" rel="noopener" aria-label="Open full-size Trade-off"><img src="assets/media/rfr-tradeoff.webp" alt="Scatter plot of TR per pound against frame weight for every valid design the search tried" loading="lazy" /></a><figcaption><strong>Every design the search tried</strong><span>TR per pound against weight for every rule-valid frame in the final search, with the SolidWorks results. At the team’s target weight the search finds about 40; heavier frames go higher.</span><a href="assets/media/rfr-tradeoff.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 5</span><button type="button" data-direction="1" aria-label="Next view">→</button></div></div><div class="feature-notes"><p><strong>How it works.</strong> A ground structure of 630–810 candidate tubes and 270–350 X-braces is drawn between the fixed points. One adjoint solve ranks every candidate at once, and Sherman–Morrison–Woodbury updates score each add, remove or resize exactly in about a millisecond without re-solving the frame. A tabu search and a small integer program pick compatible tubes, random kicks escape local optima, and an outer pattern search moves 8 node positions within the rule windows.</p><p><strong>What happened next.</strong> The tool exports a buildable SolidWorks weldment with a cut list, drawing and BOM. After I showed the method to the chassis leads, I joined the work on the 2028 frame in Ansys.</p></div><button type="button" class="math-launch" data-math-open aria-haspopup="dialog" aria-controls="math-dialog"><span class="math-launch-kicker">Interactive explainer · 10 steps</span><span class="math-launch-title">How the math works</span><span class="math-launch-eq" aria-hidden="true">dθ/ds = −(bᵀu)(bᵀλ)</span><span class="math-launch-go" aria-hidden="true">Open →</span></button><p class="prototype-status">TR figures come from the team’s SolidWorks beam study, not a physical test. Open items: the real axle position and the battery removal path.</p></article>
+<article class="project-card prototype-feature reveal" id="fan-car"><span class="project-date">2023–2026 · Active aerodynamics testbed</span><h3>RC Fan Car V2</h3><p class="prototype-intro">The current design of my active-aero testbed: a 1/10 Tamiya TT-02 turned into a Brabham BT46B-style fan car. Two blowers pull a skirted plenum under the floor down to the ground, a DRS rear wing trims balance, and four servo rockers hold ride height so the skirt seal survives as the fan load comes and goes. Every number comes from one parameter file through scripted CAD, calculations, FEA, CFD and a controls simulation.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="RC fan car views" tabindex="0"><div class="carousel-choices" aria-label="Choose a view"><button type="button" data-goto="0" aria-pressed="true">Finished car</button><button type="button" data-goto="1" aria-pressed="false">X-ray</button><button type="button" data-goto="2" aria-pressed="false">Chassis</button><button type="button" data-goto="3" aria-pressed="false">Plenum</button><button type="button" data-goto="4" aria-pressed="false">DRS wing</button><button type="button" data-goto="5" aria-pressed="false">CFD · skirt gap</button><button type="button" data-goto="6" aria-pressed="false">CFD · wing</button><button type="button" data-goto="7" aria-pressed="false">FEA</button><button type="button" data-goto="8" aria-pressed="false">Controls SIL</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 9: Finished car"><a href="assets/media/fancar-body.webp" target="_blank" rel="noopener" aria-label="Open full-size Finished car"><img src="assets/media/fancar-body.webp" alt="Red vacuum-formed body on the RC fan car with a rear wing" loading="lazy" /></a><figcaption><strong>The finished car</strong><span>FreeCAD model generated by script, with a custom vacuum-formed body. 2.16 kg, $498 build cost against a $500 budget.</span><a href="assets/media/fancar-body.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 9: X-ray" hidden><a href="assets/media/fancar-xray.webp" target="_blank" rel="noopener" aria-label="Open full-size X-ray"><img src="assets/media/fancar-xray.webp" alt="Translucent body showing the blower stack, electronics and wing underneath" loading="lazy" /></a><figcaption><strong>Through the body</strong><span>The blower stack, aero battery, sensors and servo rockers packaged under the shell. A clearance check found 0 part overlaps across 35 printed parts and 104 fasteners.</span><a href="assets/media/fancar-xray.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 9: Chassis" hidden><a href="assets/media/fancar-chassis.webp" target="_blank" rel="noopener" aria-label="Open full-size Chassis"><img src="assets/media/fancar-chassis.webp" alt="Chassis without the body showing the orange blower stack, blue printed deck and rear wing" loading="lazy" /></a><figcaption><strong>Chassis and systems</strong><span>Two 97 mm centrifugal blowers in series on an isolated deck, an ESP32-S3 controller, an IMU, barometers on the plenum and ambient air, and ride-height sensors.</span><a href="assets/media/fancar-chassis.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 9: Plenum" hidden><a href="assets/media/fancar-plenum.webp" target="_blank" rel="noopener" aria-label="Open full-size Plenum"><img src="assets/media/fancar-plenum.webp" alt="Underside view of the sealed plenum between the wheels" loading="lazy" /></a><figcaption><strong>Sealed plenum</strong><span>A 183 × 132 mm plenum sealed by 0.5 mm UHMW sliding skirts. Predicted fan downforce is 18.4 N, 0.87 of the car’s weight, at a 0.5 mm skirt gap, and it doesn’t depend on speed.</span><a href="assets/media/fancar-plenum.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 9: DRS wing" hidden><a href="assets/media/fancar-wing.webp" target="_blank" rel="noopener" aria-label="Open full-size DRS wing"><img src="assets/media/fancar-wing.webp" alt="Two-element rear wing with a servo-driven flap" loading="lazy" /></a><figcaption><strong>DRS rear wing</strong><span>A NACA 6412 main plane and 4412 flap with a micro-servo DRS. The flap hinge torque is under 1% of the servo’s stall torque.</span><a href="assets/media/fancar-wing.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="5" role="group" aria-roledescription="slide" aria-label="6 of 9: CFD · skirt gap" hidden><a href="assets/media/fancar-cfd-skirt.webp" target="_blank" rel="noopener" aria-label="Open full-size CFD · skirt gap"><img src="assets/media/fancar-cfd-skirt.webp" alt="SU2 velocity field and streamlines through a 0.5 mm skirt gap" loading="lazy" /></a><figcaption><strong>CFD: leakage under the skirt</strong><span>2-D SU2 runs of the flow through the skirt gap give the discharge coefficient (about 0.63 at the design point). Leakage sets how much fan power holds the suction.</span><a href="assets/media/fancar-cfd-skirt.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="6" role="group" aria-roledescription="slide" aria-label="7 of 9: CFD · wing" hidden><a href="assets/media/fancar-cfd-wing.webp" target="_blank" rel="noopener" aria-label="Open full-size CFD · wing"><img src="assets/media/fancar-cfd-wing.webp" alt="SU2 flow fields around the wing with the DRS closed and open" loading="lazy" /></a><figcaption><strong>CFD: DRS closed vs open</strong><span>SU2 RANS of the wing section with the flap closed and open. The closed main element separates at 30°, which the design accounts for.</span><a href="assets/media/fancar-cfd-wing.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="7" role="group" aria-roledescription="slide" aria-label="8 of 9: FEA" hidden><a href="assets/media/fancar-fea-rocker.webp" target="_blank" rel="noopener" aria-label="Open full-size FEA"><img src="assets/media/fancar-fea-rocker.webp" alt="Von Mises stress on the printed suspension rocker" loading="lazy" /></a><figcaption><strong>FEA of printed parts</strong><span>gmsh and CalculiX on six printed parts. All pass a safety factor of 2 at twice running load; the rocker shown is 8.6 MPa with a factor of 3.5.</span><a href="assets/media/fancar-fea-rocker.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="8" role="group" aria-roledescription="slide" aria-label="9 of 9: Controls SIL" hidden><a href="assets/media/fancar-sil-fan-step.webp" target="_blank" rel="noopener" aria-label="Open full-size Controls SIL"><img src="assets/media/fancar-sil-fan-step.webp" alt="Simulation plots of ride height, plenum suction and actuator offset during a fan step" loading="lazy" /></a><figcaption><strong>Controls, software in the loop</strong><span>The controllers run against a vehicle model at 1 kHz. A fan step at standstill showed the first controller sagging the car, which led to three controller fixes.</span><a href="assets/media/fancar-sil-fan-step.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 9</span><button type="button" data-direction="1" aria-label="Next view">→</button></div></div><p class="prototype-status"><strong>Analysed, not yet built in this configuration.</strong> “Pass” means the checks pass in analysis; physical testing follows the test plan in the 42-page design report.</p><div class="prototype-links"><a class="btn btn-ghost" href="#cad" data-cad-open="fancar">Rotate the CAD in 3D ↑</a></div></article>
 <article class="project-card prototype-feature reveal" id="furball"><span class="project-date">2026 · Browser game · Live on CrazyGames</span><h3>Furball: Tactical Flight Sim</h3><p class="prototype-intro">A browser air-combat game I designed and shipped, built on Three.js. It has 100 aircraft across five eras, solo missions (close air support, frontline, dogfight, air escort), custom loadouts, research progression, and private multiplayer rooms for friends. It went into Basic Launch on CrazyGames on October 13, 2026, and had 636 players and 769 plays in its first two days.</p><div class="prototype-carousel" role="region" aria-roledescription="carousel" aria-label="Furball game screenshots" tabindex="0"><div class="carousel-choices" aria-label="Choose a view"><button type="button" data-goto="0" aria-pressed="true">Key art</button><button type="button" data-goto="1" aria-pressed="false">Hangar</button><button type="button" data-goto="2" aria-pressed="false">Air escort</button><button type="button" data-goto="3" aria-pressed="false">CAS strike</button><button type="button" data-goto="4" aria-pressed="false">Carrier</button></div><div class="prototype-slides"><figure class="prototype-slide" data-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 5: Key art"><a href="assets/media/furball-key-art.webp" target="_blank" rel="noopener" aria-label="Open full-size Key art"><img src="assets/media/furball-key-art.webp" alt="Furball key art with two jets over mountains at sunset" loading="lazy" /></a><figcaption><strong>Furball</strong><span>The hardest parts were synchronizing combat in multiplayer and tuning the flight models and controls through repeated playtests.</span><a href="assets/media/furball-key-art.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 5: Hangar" hidden><a href="assets/media/furball-hangar.webp" target="_blank" rel="noopener" aria-label="Open full-size Hangar"><img src="assets/media/furball-hangar.webp" alt="Hangar lobby showing an F-14B with a wing-sweep slider" loading="lazy" /></a><figcaption><strong>The hangar</strong><span>The lobby shows the selected aircraft in 3D, with research, loadouts, mods, skins and mission selection around it. Variable-sweep aircraft can animate their wings.</span><a href="assets/media/furball-hangar.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 5: Air escort" hidden><a href="assets/media/furball-air-escort.webp" target="_blank" rel="noopener" aria-label="Open full-size Air escort"><img src="assets/media/furball-air-escort.webp" alt="A propeller fighter escorting a bomber formation over a river valley" loading="lazy" /></a><figcaption><strong>Air escort</strong><span>Protect a bomber formation from inbound fighters. The HUD shows speed, altitude, G, ammunition and the objective.</span><a href="assets/media/furball-air-escort.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="3" role="group" aria-roledescription="slide" aria-label="4 of 5: CAS strike" hidden><a href="assets/media/furball-cas-strike.webp" target="_blank" rel="noopener" aria-label="Open full-size CAS strike"><img src="assets/media/furball-cas-strike.webp" alt="An F-22 at night over a desert airfield with a close-air-support objective list" loading="lazy" /></a><figcaption><strong>Close air support</strong><span>A ground column pushes through defense lines toward a town. A JTAC calls targets with smoke, and the pilot works through artillery, a SAM site and a bridge.</span><a href="assets/media/furball-cas-strike.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure><figure class="prototype-slide" data-slide="4" role="group" aria-roledescription="slide" aria-label="5 of 5: Carrier" hidden><a href="assets/media/furball-carrier.webp" target="_blank" rel="noopener" aria-label="Open full-size Carrier"><img src="assets/media/furball-carrier.webp" alt="A Harrier on a carrier deck ready for a catapult launch" loading="lazy" /></a><figcaption><strong>Carrier operations</strong><span>Test flights include catapult launches and carrier landings, with gear, flaps and brakes.</span><a href="assets/media/furball-carrier.webp" target="_blank" rel="noopener">Open full-size view ↗</a></figcaption></figure></div><div class="carousel-controls"><button type="button" data-direction="-1" aria-label="Previous view">←</button><span class="carousel-count" aria-live="polite" aria-atomic="true">1 / 5</span><button type="button" data-direction="1" aria-label="Next view">→</button></div></div><p class="prototype-status">Automated autopilot sweeps check every mission mode for balance and stability; human playtesting tunes the feel.</p><div class="prototype-links"><a class="btn btn-primary" href="https://furballgame.com" target="_blank" rel="noopener">Play Furball ↗</a></div></article>
 
         <article class="project-card reveal">
@@ -407,6 +449,55 @@
     </div>
   </section>
 
+  <!-- 3D ART (side section) -->
+  <section id="art" class="section art-section" aria-labelledby="art-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Other work</span>
+        <h2 id="art-title">3D art</h2>
+      </div>
+
+      <div class="art-grid">
+        <figure class="art-tile art-hero">
+          <video class="art-media" autoplay muted loop playsinline preload="metadata" poster="assets/art/mclaren-f1-breakdown.jpg" width="1920" height="1080" aria-label="McLaren F1 render breakdown: the model refined from wireframe to finished mesh, then orange paint, a wet road, terrain, and low mist at sunset. Silent, looping.">
+            <source src="assets/art/mclaren-f1-breakdown.mp4" type="video/mp4" />
+          </video>
+          <figcaption>McLaren F1 · Blender · Cycles</figcaption>
+        </figure>
+
+        <figure class="art-tile">
+          <video class="art-media" autoplay muted loop playsinline preload="metadata" poster="assets/art/uh1-huey-breakdown.jpg" width="720" height="900" aria-label="UH-1 Huey layer breakdown: white clay mesh, painted foreground, then sky, clouds, and the final graded shot over rice fields. Silent, looping.">
+            <source src="assets/art/uh1-huey-breakdown.mp4" type="video/mp4" />
+          </video>
+          <figcaption>UH-1 Huey · Blender · layer breakdown</figcaption>
+        </figure>
+
+        <figure class="art-tile art-pair">
+          <div class="art-pair-media">
+            <a class="art-media" href="assets/art/f22-raptor-poster.jpg" target="_blank" rel="noopener"><img src="assets/art/f22-raptor-poster.jpg" alt="F-22 Raptor poster: the jet banking overhead against a golden sky, titled RAPTOR" width="1200" height="1500" loading="lazy" decoding="async" /></a>
+            <a class="art-media" href="assets/art/f22-raptor-blender.jpg" target="_blank" rel="noopener"><img src="assets/art/f22-raptor-blender.jpg" alt="Blender screenshot of the F-22 fuselage mesh in the viewport, with the material node tree below" width="864" height="1080" loading="lazy" decoding="async" /></a>
+          </div>
+          <figcaption>F-22 Raptor · modeled from scratch, 152k verts</figcaption>
+        </figure>
+
+        <figure class="art-tile">
+          <a class="art-media" href="assets/art/f4e-phantom-poster.jpg" target="_blank" rel="noopener"><img src="assets/art/f4e-phantom-poster.jpg" alt="F-4E Phantom poster: a camouflaged Phantom climbing over dark hills at dusk, titled F-4E PHANTOM" width="1016" height="1270" loading="lazy" decoding="async" /></a>
+          <figcaption>F-4E Phantom · Blender</figcaption>
+        </figure>
+
+        <figure class="art-tile art-pair">
+          <div class="art-pair-media">
+            <a class="art-media" href="assets/art/tornado-poster.jpg" target="_blank" rel="noopener"><img src="assets/art/tornado-poster.jpg" alt="Panavia Tornado poster: a green-camouflaged German Tornado flying low over a motion-blurred forest" width="1080" height="1080" loading="lazy" decoding="async" /></a>
+            <video class="art-media" autoplay muted loop playsinline preload="metadata" poster="assets/art/tornado-breakdown.jpg" width="720" height="720" aria-label="Panavia Tornado breakdown: white clay model, painted jet, then the forest backdrop and motion blur. Silent, looping.">
+              <source src="assets/art/tornado-breakdown.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <figcaption>Panavia Tornado · Blender</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="container contact-inner">
@@ -434,7 +525,335 @@
   </div>
 </footer>
 
-<script src="assets/js/script.js?v=20260930-contact"></script>
-<script src="assets/js/prototypes.js"></script>
+<!-- CHASSIS OPTIMIZER: HOW THE MATH WORKS (opened from the chassis card) -->
+<dialog class="math-dialog" id="math-dialog" aria-labelledby="math-dialog-title">
+  <div class="math-shell">
+    <header class="math-top">
+      <div class="math-top-title"><small>Chassis optimizer · the math</small><strong id="math-dialog-title">How the math works</strong></div>
+      <div class="math-top-actions">
+        <button type="button" class="math-close" data-math-close aria-label="Close the explainer">✕</button>
+      </div>
+      <div class="math-progress" aria-hidden="true"><span></span></div>
+    </header>
+
+    <nav class="math-nav" aria-label="Explainer steps">
+      <button type="button" data-step="0">The question</button>
+      <button type="button" data-step="1">The torsion test</button>
+      <button type="button" data-step="2">A tube becomes a beam</button>
+      <button type="button" data-step="3">Assembling the frame</button>
+      <button type="button" data-step="4">Six modes per tube</button>
+      <button type="button" data-step="5">Adjoint sensitivities</button>
+      <button type="button" data-step="6">Exact low-rank updates</button>
+      <button type="button" data-step="7">The search</button>
+      <button type="button" data-step="8">Geometric feasibility</button>
+      <button type="button" data-step="9">Reading a result</button>
+    </nav>
+
+    <div class="math-body" tabindex="-1">
+      <p class="math-loading" data-math-loading hidden>Typesetting equations…</p>
+
+      <!-- 1 -->
+      <section class="math-step" data-title="The question">
+        <span class="math-kicker">01 · Overview</span>
+        <h3>Make the frame stiff in torsion <em>without extra steel.</em></h3>
+        <p class="lede">Hold the rear suspension pickups still, push up on the front-left pickups and down on the front-right. The chassis twists. Every move the optimizer makes answers one question: if a tube is added, removed, resized or moved, how much does the twist change, how much does the mass change, and is the frame still allowed?</p>
+        <div class="trio">
+          <div><i>Geometry</i><b>Move a joint</b><span>Changes tube lengths and directions.</span></div>
+          <div><i>Topology</i><b>Choose a connection</b><span>Changes which load paths exist.</span></div>
+          <div><i>Sizing</i><b>Change a section</b><span>Changes each tube's stiffness and mass.</span></div>
+        </div>
+        <p>Call the joint positions \(p\) and the tube choices \(x\) (absent, or one stock size from an allowed catalogue). With torsional rigidity \(K\) in lb·ft/deg and weight \(W\) in lb, there are two ways to ask for a good frame:</p>
+        <div class="eq">\[ \max_{p,\,x}\; Q = \frac{K(p,x)}{W(p,x)} \qquad\text{or}\qquad \min_{p,\,x}\; W(p,x)\ \ \text{subject to}\ \ K \ge K_{\min} \]</div>
+        <div class="callout"><strong>Worked example</strong><p>Frame A has \(K = 2400\), \(W = 70\); frame B has \(K = 2800\), \(W = 80\). Their ratios are 34.29 and 35.00, so the ratio objective picks B. With a target of \(K_{\min} = 2300\), both pass and minimum mass picks A. Neither is wrong: they answer different questions.</p></div>
+        <h4>The whole loop</h4>
+        <ol class="flow">
+          <li data-n="1"><div><b>Propose a candidate</b><span>Geometry, connections and tube sections.</span></div></li>
+          <li data-n="2"><div><b>Screen it</b><span>Protected hoops and pickups, connectivity, clearances, keep-outs, weld angles.</span></div></li>
+          <li data-n="3"><div><b>Assemble</b><span>Build the stiffness matrix \(K\) and the load vector \(f\).</span></div></li>
+          <li data-n="4"><div><b>Solve</b><span>Apply the fixtures and solve \(K_{ff}\,u_f = f_f\).</span></div></li>
+          <li data-n="5"><div><b>Measure</b><span>Read the twist \(\theta = c^{\mathsf T}u\), then compute \(K\) and \(W\).</span></div></li>
+          <li data-n="6"><div><b>Compare and repeat</b><span>Keep eligible designs and generate the next candidate.</span></div></li>
+        </ol>
+        <p class="flow-loop">The physics evaluates a design. The search decides which design to evaluate next.</p>
+      </section>
+
+      <!-- 2 -->
+      <section class="math-step" data-title="The torsion test" hidden>
+        <span class="math-kicker">02 · The score</span>
+        <h3>The score is a <em>virtual torsion test.</em></h3>
+        <p class="lede">The model works in metres, newtons and radians, with \(x\) forward, \(y\) left and \(z\) up. Eight rear pickups are fixed. Eight front pickups each get 100 lbf (444.8 N), up on one side and down on the other.</p>
+        <div class="eq">\[ F_i = \begin{pmatrix} 0 \\ 0 \\ \operatorname{sgn}(y_i)\,F_0 \end{pmatrix}, \qquad M_i = r_i \times F_i, \qquad T_x = \sum_i y_i\,F_{z,i} \]</div>
+        <p>On the left, \(y_i\) and \(F_{z,i}\) are both positive. On the right, both are negative. Their products add, so the two sides twist the frame the same way: \(T_x = bF_z + (-b)(-F_z) = 2bF_z\).</p>
+        <p><strong>Fixtures pin translations only:</strong> \(u_x = u_y = u_z = 0\), while the rotations stay free. The separated pickups still resist torque through their reaction forces and lever arms. Clamping the rotations too would be a different test and would make the frame look stiffer than it is.</p>
+        <p><strong>Twist is read at two front crossbars</strong> and averaged. The selector vector \(c\) is zero except for \(\tfrac12\) at those two rotation entries of the displacement vector \(u\):</p>
+        <div class="eq">\[ \theta_p = \frac{\theta_1 + \theta_2}{2} = c^{\mathsf T}u, \qquad K_{\text{tracker}} = \frac{545\ \text{lb}\cdot\text{ft}}{\lvert \theta_{p,\deg} \rvert}, \qquad Q = \frac{K_{\text{tracker}}}{W} \]</div>
+
+        <div class="mw" data-widget="torsion">
+          <div class="mw-head"><strong>Torsion score calculator</strong><span>Try it</span></div>
+          <div class="mw-body">
+            <div class="mw-controls">
+              <label><span>Probe 1 rotation \(\theta_1\) <output data-out="t1"></output></span><input type="range" min="0.100" max="0.400" step="0.0001" value="0.2145" data-in="t1" /></label>
+              <label><span>Probe 2 rotation \(\theta_2\) <output data-out="t2"></output></span><input type="range" min="0.100" max="0.400" step="0.0001" value="0.2129" data-in="t2" /></label>
+              <label><span>Frame weight \(W\) <output data-out="w"></output></span><input type="range" min="55" max="95" step="0.01" value="75.48" data-in="w" /></label>
+            </div>
+            <dl class="mw-out">
+              <div><dt>Average twist</dt><dd data-out="tp"></dd></div>
+              <div class="hl"><dt>Torsional rigidity</dt><dd data-out="k"></dd></div>
+              <div class="hl"><dt>Score Q</dt><dd data-out="q"></dd></div>
+              <div><dt>If you averaged K instead</dt><dd data-out="kbad"></dd></div>
+            </dl>
+          </div>
+          <p class="mw-note">Starts at the recomputed historical outer-b6 recipe: 0.2145° and 0.2129° give 2,550 lb·ft/deg and Q ≈ 33.8 at 75.48 lb.</p>
+        </div>
+
+        <div class="callout"><strong>Average the rotations, not the stiffnesses</strong><p>Probes at 0.20° and 0.22° average to 0.21°, so \(K = 545/0.21 = 2595.2\). Averaging \(545/0.20\) and \(545/0.22\) gives 2601.1, which is a different and wrong number.</p></div>
+        <p><strong>A built-in self-check.</strong> The model is linear, so multiplying every force by \(\alpha\) multiplies every displacement by \(\alpha\) and the ratio \(T_x/\theta_p\) is unchanged. Reversing the loads must flip the sign of \(u\). If two probes ever rotate in opposite directions, their average can approach zero and inflate the score, so acceptance requires two finite, non-zero, same-sign probe rotations.</p>
+      </section>
+
+      <!-- 3 -->
+      <section class="math-step" data-title="A tube becomes a beam" hidden>
+        <span class="math-kicker">03 · One element</span>
+        <h3>Each tube becomes a <em>3D Timoshenko beam.</em></h3>
+        <p class="lede">The material says how steel responds to strain; the cross-section says how much steel there is and how far it sits from the centre. The model uses \(E = 205\) GPa, \(G = 80\) GPa and \(\rho = 7850\) kg/m³.</p>
+        <p>For a round tube with outside diameter \(D\), wall \(t\) and inside diameter \(d = D - 2t\):</p>
+        <div class="eq">\[ A = \frac{\pi}{4}\left(D^2 - d^2\right), \qquad I = \frac{\pi}{64}\left(D^4 - d^4\right), \qquad J = \frac{\pi}{32}\left(D^4 - d^4\right) = 2I \]</div>
+        <p>\(A\) sets axial stiffness and mass, \(I\) sets bending stiffness and \(J\) sets torsional stiffness. For a thin wall (\(t \ll D\)) the leading terms show why bigger, thinner tubes are efficient:</p>
+        <div class="eq">\[ A \approx \pi D t, \qquad I \approx \frac{\pi D^3 t}{8}, \qquad \frac{I}{A} \approx \frac{D^2}{8} \]</div>
+        <span class="eq-note">At fixed mass, bending stiffness grows roughly with D².</span>
+
+        <div class="mw" data-widget="section">
+          <div class="mw-head"><strong>Tube section calculator</strong><span>Try it</span></div>
+          <div class="mw-body">
+            <div class="mw-controls">
+              <label><span>Outside diameter \(D\) <output data-out="d"></output></span><input type="range" min="0.5" max="1.75" step="0.125" value="1.25" data-in="d" /></label>
+              <label><span>Wall thickness \(t\)</span>
+                <select data-in="t">
+                  <option value="0.028">0.028 in</option><option value="0.035">0.035 in</option><option value="0.049" selected>0.049 in</option><option value="0.058">0.058 in</option><option value="0.065">0.065 in</option><option value="0.083">0.083 in</option><option value="0.095">0.095 in</option><option value="0.120">0.120 in</option>
+                </select></label>
+              <label><span>Tube length \(L\) (for shear) <output data-out="l"></output></span><input type="range" min="2" max="36" step="0.5" value="6" data-in="l" /></label>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Cross-section of the selected tube, drawn to scale against a dashed 1.000 inch reference circle"><circle class="tube-base" cx="100" cy="100" r="50" /><path class="tube-ring" data-ring fill-rule="evenodd" d="" /><text x="100" y="196" text-anchor="middle">dashed: 1.000 in reference</text></svg>
+            </div>
+            <dl class="mw-out">
+              <div><dt>Area A</dt><dd data-out="a"></dd></div>
+              <div><dt>Mass per metre</dt><dd data-out="m"></dd></div>
+              <div><dt>Second moment I</dt><dd data-out="i"></dd></div>
+              <div><dt>Torsion constant J</dt><dd data-out="j"></dd></div>
+              <div class="hl wide"><dt>Versus 1.000 × 0.065 in</dt><dd data-out="cmp"></dd></div>
+              <div><dt>Shear parameter φ</dt><dd data-out="phi"></dd></div>
+              <div class="hl"><dt>Euler–Bernoulli error</dt><dd data-out="eb"></dd></div>
+            </dl>
+          </div>
+          <p class="mw-note">Try 1.250 × 0.049: about 59% more bending stiffness than 1.000 × 0.065 for about 3% less mass. A section comparison only: minimum-wall rules, stock and welding still apply.</p>
+        </div>
+
+        <h4>Stretching, twisting, bending</h4>
+        <p>A straight tube stretched by \(u_j - u_i\) carries \(N = EA\,(u_j - u_i)/L\). Written for both ends, that is Hooke's law for a two-node element. Torsion has the same pattern with \(GJ/L\) and end rotations.</p>
+        <div class="eq">\[ \begin{pmatrix} f_i \\ f_j \end{pmatrix} = \frac{EA}{L}\begin{pmatrix} 1 &amp; -1 \\ -1 &amp; 1 \end{pmatrix}\begin{pmatrix} u_i \\ u_j \end{pmatrix}, \qquad M_x = \frac{GJ}{L}\left(\theta_{x,j} - \theta_{x,i}\right) \]</div>
+        <p><strong>Why Timoshenko.</strong> Euler–Bernoulli beams only bend; Timoshenko beams also shear. With shear correction \(\kappa = 0.5\), matched to the team's SolidWorks study, the shear parameter is</p>
+        <div class="eq">\[ \phi = \frac{12\,EI}{\kappa\,G A L^2} \]</div>
+        <p>\(\phi\) grows like \(1/L^2\), so short tubes are where shear matters. An optimizer using Euler–Bernoulli beams would overrate short, stubby members and happily exploit that error. The bending block for one plane, with end variables \([v_i,\ \theta_{z,i},\ v_j,\ \theta_{z,j}]\), is</p>
+        <div class="eq">\[ K_b = \frac{EI}{L^3(1+\phi)}\begin{pmatrix} 12 &amp; 6L &amp; -12 &amp; 6L \\ 6L &amp; (4+\phi)L^2 &amp; -6L &amp; (2-\phi)L^2 \\ -12 &amp; -6L &amp; 12 &amp; -6L \\ 6L &amp; (2-\phi)L^2 &amp; -6L &amp; (4+\phi)L^2 \end{pmatrix} \]</div>
+        <p>Each node has three translations and three rotations, so one element has 12 end variables. One axial block, one torsion block and two bending blocks fill its \(12 \times 12\) stiffness matrix. Unlike a pin-jointed truss, the joints carry bending and torsion.</p>
+      </section>
+
+      <!-- 4 -->
+      <section class="math-step" data-title="Assembling the frame" hidden>
+        <span class="math-kicker">04 · The whole frame</span>
+        <h3>Shared nodes make 200 beams act as <em>one structure.</em></h3>
+        <p class="lede">A diagonal tube doesn't line up with the chassis axes, so each element gets its own local frame and is rotated into chassis coordinates.</p>
+        <div class="eq">\[ \hat e_x = \frac{r_j - r_i}{L}, \qquad \hat e_y = \frac{r_{\text{ref}} \times \hat e_x}{\lVert r_{\text{ref}} \times \hat e_x \rVert}, \qquad \hat e_z = \hat e_x \times \hat e_y, \qquad R = \begin{pmatrix} \hat e_x^{\mathsf T} \\ \hat e_y^{\mathsf T} \\ \hat e_z^{\mathsf T} \end{pmatrix} \]</div>
+        <span class="eq-note">The reference is global z, or global y when a tube is nearly vertical, to avoid dividing by a near-zero cross product.</span>
+        <p>The strain energy must be the same in either coordinate system. That requirement, not a trick, gives the transformation, and summing every element at its shared nodes gives the global matrix:</p>
+        <div class="eq">\[ K_e^{\text{global}} = T_e^{\mathsf T} K_e^{\text{local}} T_e, \qquad T_e = \operatorname{diag}(R, R, R, R), \qquad K = \sum_e A_e^{\mathsf T}\, T_e^{\mathsf T} K_e^{\text{local}} T_e\, A_e \]</div>
+        <div class="callout blue"><strong>Assembly with two springs</strong><p>Spring \(k_1\) joins nodes 1 and 2; spring \(k_2\) joins nodes 2 and 3. Both act at node 2, so its diagonal entry is the sum:</p>
+          <div class="eq">\[ K = \begin{pmatrix} k_1 &amp; -k_1 &amp; 0 \\ -k_1 &amp; k_1 + k_2 &amp; -k_2 \\ 0 &amp; -k_2 &amp; k_2 \end{pmatrix} \]</div>
+          <p>Fix node 1 and pull node 3 with force \(P\): \(u_2 = P/k_1\) and \(u_3 = P/k_1 + P/k_2\). A chassis works the same way with coupled 6-DOF beam blocks in place of scalar springs.</p></div>
+        <h4>Fixtures, then one linear solve</h4>
+        <p>Without fixtures, moving the whole chassis strains nothing, so \(K\) is singular. Split the coordinates into free (\(f\)) and constrained (\(c\)) and set \(u_c = 0\):</p>
+        <div class="eq">\[ \begin{pmatrix} K_{ff} &amp; K_{fc} \\ K_{cf} &amp; K_{cc} \end{pmatrix}\begin{pmatrix} u_f \\ u_c \end{pmatrix} = \begin{pmatrix} f_f \\ f_c + r_c \end{pmatrix} \;\Longrightarrow\; K_{ff}\,u_f = f_f, \qquad r_c = K_{cf}\,u_f - f_c \]</div>
+        <p>The same answer minimises the potential energy. Equilibrium, compatibility and the material law all meet in one equation:</p>
+        <div class="eq">\[ \Pi(u) = \tfrac12\, u^{\mathsf T} K u - f^{\mathsf T} u, \qquad \nabla \Pi = K u - f = 0, \qquad U = \tfrac12\, u^{\mathsf T} K u = \tfrac12\, f^{\mathsf T} u \]</div>
+        <p><strong>Mass is computed separately.</strong> Centreline mass minus a coping allowance at each end (\(r_c = 12.7\) mm), converted to pounds:</p>
+        <div class="eq">\[ W = \frac{1}{0.45359237}\Big( \sum_e \rho A_e L_e \;-\; \sum_m \rho A_m \min(2r_c,\ 0.5\,L_m) \Big) \]</div>
+        <div class="callout"><strong>Connectivity is part of the physics</strong><p>A drawn crossing isn't automatically a weld, and a nearby node isn't automatically the load point. Nodes within 10 mm merge. The solver also refuses to run if a load, fixture or probe maps to an unused node, because silently pinning a loaded point would keep its force in the torque while removing its deflection, which is a fake stiffness gain.</p></div>
+      </section>
+
+      <!-- 5 -->
+      <section class="math-step" data-title="Six modes per tube" hidden>
+        <span class="math-kicker">05 · The structure that makes it fast</span>
+        <h3>A 12-variable beam only deforms <em>six ways.</em></h3>
+        <p class="lede">Of a beam's 12 end variables, six combinations move it as a rigid body (three translations, three rotations) and strain nothing. The other six are deformation. So each element matrix is a sum of six rank-one pieces:</p>
+        <div class="eq">\[ K_e = \sum_{t=1}^{6} s_t\, b_t b_t^{\mathsf T} = B^{\mathsf T} \operatorname{diag}(s)\, B, \qquad \eta_t = b_t^{\mathsf T} q_e, \qquad U_e = \tfrac12 \sum_{t=1}^{6} s_t\, \eta_t^2 \]</div>
+        <div class="table-wrap"><table class="mode-table">
+          <thead><tr><th>Mode</th><th>Deformation \(\eta_t\)</th><th>Stiffness \(s_t\)</th></tr></thead>
+          <tbody>
+            <tr><td>Stretch</td><td>\(u_j - u_i\)</td><td>\(EA/L\)</td></tr>
+            <tr><td>Twist</td><td>\(\theta_{x,j} - \theta_{x,i}\)</td><td>\(GJ/L\)</td></tr>
+            <tr><td>Symmetric bend (xy)</td><td>\(\theta_{z,i} + \theta_{z,j} - 2(v_j - v_i)/L\)</td><td>\(3EI/\big(L(1+\phi)\big)\)</td></tr>
+            <tr><td>Antisymmetric bend (xy)</td><td>\(\theta_{z,i} - \theta_{z,j}\)</td><td>\(EI/L\)</td></tr>
+            <tr><td>Symmetric bend (xz)</td><td>\(-\theta_{y,i} - \theta_{y,j} - 2(w_j - w_i)/L\)</td><td>\(3EI/\big(L(1+\phi)\big)\)</td></tr>
+            <tr><td>Antisymmetric bend (xz)</td><td>\(\theta_{y,i} - \theta_{y,j}\)</td><td>\(EI/L\)</td></tr>
+          </tbody></table></div>
+        <p><strong>Sanity check.</strong> Rotate the element rigidly by a small angle \(\alpha\) in its xy plane: \(v_j - v_i = \alpha L\) and \(\theta_{z,i} = \theta_{z,j} = \alpha\). Then \(\eta_3 = \alpha + \alpha - 2\alpha = 0\) and \(\eta_4 = 0\). No deformation, no energy, no force.</p>
+        <p>Recombining the two bending modes reproduces every entry of the Timoshenko block. For example, the rotation diagonal is \(\frac{3EI}{L(1+\phi)} + \frac{EI}{L} = \frac{(4+\phi)EI}{L(1+\phi)}\). Numerically, the six-mode assembly matched the direct element matrix to about \(2.7 \times 10^{-20}\).</p>
+        <div class="callout"><strong>Why this matters</strong><p>Resizing a tube on a fixed layout changes its stiffnesses \(s_t\) but not its mode vectors \(b_t\). So any add, remove or resize is a <strong>low-rank</strong> change to a matrix with thousands of free coordinates:</p>
+          <div class="eq">\[ K' = K + U D U^{\mathsf T}, \qquad U = [\,b_{t_1}\ \cdots\ b_{t_r}\,], \qquad D = \operatorname{diag}(\Delta s) \]</div>
+          <p>One plain tube touches at most six columns; a mirrored pair or a weld group touches more. Either way \(r\) is tiny next to the size of \(K\).</p></div>
+      </section>
+
+      <!-- 6 -->
+      <section class="math-step" data-title="Adjoint sensitivities" hidden>
+        <span class="math-kicker">06 · Ranking every tube at once</span>
+        <h3>Two linear solves rank <em>every candidate.</em></h3>
+        <p class="lede">The direct way to test a change is to rebuild \(K\), re-solve and read the twist. Doing that for hundreds of candidate tubes at every step is far too slow. Differentiate the equilibrium equation instead of the inverse.</p>
+        <div class="eq">\[ K u = f, \quad \theta = c^{\mathsf T} u \quad\Longrightarrow\quad \frac{dK}{da}\,u + K\,\frac{du}{da} = 0 \quad\Longrightarrow\quad \frac{d\theta}{da} = -\,c^{\mathsf T} K^{-1} \frac{dK}{da}\, u \]</div>
+        <p>Define one extra field, the <strong>adjoint</strong>, by solving with the probe selector as the load. \(K\) is symmetric, so:</p>
+        <div class="eq">\[ K\lambda = c \qquad\Longrightarrow\qquad \frac{d\theta}{da} = -\,\lambda^{\mathsf T} \frac{dK}{da}\, u \]</div>
+        <p>For one mode coefficient, \(dK/ds = b\,b^{\mathsf T}\), and the sensitivity collapses to a product of two numbers:</p>
+        <div class="eq">\[ \frac{d\theta}{ds} = -\,\big(b^{\mathsf T} u\big)\,\big(b^{\mathsf T} \lambda\big) \]</div>
+        <div class="trio">
+          <div><i>Real load</i><b>\(Ku = f\)</b><span>Where does the torsion test actually deform the frame?</span></div>
+          <div><i>Probe load</i><b>\(K\lambda = c\)</b><span>Which deformations move the measured twist?</span></div>
+          <div><i>Combine</i><b>\(-(b^{\mathsf T}u)(b^{\mathsf T}\lambda)\)</b><span>Both must be large for a tube to matter.</span></div>
+        </div>
+        <p>A tube can carry plenty of force and still barely affect the measured twist; the product tells those apart. One primal solve and one adjoint solve give the derivative for every mode of every candidate.</p>
+        <p><strong>A surprise the math explains.</strong> For compliance \(C = f^{\mathsf T}u\) the adjoint is \(u\) itself, so \(dC/ds = -(b^{\mathsf T}u)^2 \le 0\): stiffening never hurts total compliance. The probe twist has no such guarantee, because \((b^{\mathsf T}u)(b^{\mathsf T}\lambda)\) can be negative. Stiffening one tube can redistribute load and increase a local rotation.</p>
+        <p><strong>Trading twist for weight.</strong> Taking logs of the ratio \(Q \propto 1/(|\theta|\,W)\):</p>
+        <div class="eq">\[ \frac{dQ}{Q} = -\frac{d\theta}{\theta} - \frac{dW}{W} \]</div>
+        <span class="eq-note">Locally, 2% less twist pays for 1% more weight and still nets about 1% better Q.</span>
+      </section>
+
+      <!-- 7 -->
+      <section class="math-step" data-title="Exact low-rank updates" hidden>
+        <span class="math-kicker">07 · Sherman–Morrison–Woodbury</span>
+        <h3>Then score each move exactly, <em>without re-solving.</em></h3>
+        <p class="lede">A derivative is a tangent. Removing a tube is a big step and can nearly disconnect the frame, so linear extrapolation can be badly wrong. The low-rank structure allows an exact answer for the cost of a tiny solve.</p>
+        <p>For a single-mode change \(K' = K + \Delta s\, b b^{\mathsf T}\), the Sherman–Morrison identity gives</p>
+        <div class="eq">\[ (K')^{-1} = K^{-1} - \frac{\Delta s\, K^{-1} b\, b^{\mathsf T} K^{-1}}{1 + \Delta s\, b^{\mathsf T} K^{-1} b} \qquad\Longrightarrow\qquad \theta' = \theta - \frac{\Delta s\,\big(b^{\mathsf T}\lambda\big)\big(b^{\mathsf T}u\big)}{1 + \Delta s\, q}, \quad q = b^{\mathsf T}K^{-1}b \]</div>
+        <p>For tiny \(\Delta s\) the denominator is about 1 and the adjoint derivative reappears. For larger changes the denominator accounts for the load redistribution that the derivative misses. Near a removal that would create a mechanism, it heads to zero.</p>
+
+        <div class="mw" data-widget="sm">
+          <div class="mw-head"><strong>Exact update vs. derivative, on a 2 × 2 frame</strong><span>Try it</span></div>
+          <div class="mw-body">
+            <div class="mw-controls">
+              <p style="margin:0;font-size:14px">\(K = \begin{pmatrix} 2 &amp; -1 \\ -1 &amp; 2 \end{pmatrix},\ f = c = \begin{pmatrix} 1 \\ 0 \end{pmatrix},\ b = \begin{pmatrix} 1 \\ -1 \end{pmatrix}\)<br />so \(\theta = \tfrac23\), \(b^{\mathsf T}u = b^{\mathsf T}\lambda = \tfrac13\), \(q = \tfrac23\).</p>
+              <label><span>Stiffness change \(\Delta s\) <output data-out="ds"></output></span><input type="range" min="-1.4" max="3" step="0.05" value="1" data-in="ds" /></label>
+              <dl class="mw-out">
+                <div class="hl"><dt>Exact (Sherman–Morrison)</dt><dd data-out="exact"></dd></div>
+                <div><dt>Derivative only</dt><dd data-out="lin"></dd></div>
+                <div><dt>Direct re-solve</dt><dd data-out="direct"></dd></div>
+                <div><dt>Derivative error</dt><dd data-out="err"></dd></div>
+              </dl>
+            </div>
+            <div>
+              <svg viewBox="0 0 340 230" role="img" aria-label="Plot of the measured twist against the stiffness change: the exact curve and the straight derivative line agree near zero and separate for large changes">
+                <g data-plot></g>
+              </svg>
+              <div class="legend"><span><i></i>exact θ′</span><span><i class="lin"></i>derivative</span></div>
+            </div>
+          </div>
+          <p class="mw-note">At Δs = 1 the derivative predicts 5/9 ≈ 0.5556; the exact update and a fresh solve both give 3/5 = 0.6. Drag toward −1.5 to remove all of that mode's stiffness: the frame becomes a mechanism and θ′ blows up.</p>
+        </div>
+
+        <h4>Many modes at once: Woodbury</h4>
+        <p>With the cached inverse \(Z = K^{-1}\), a change \(K' = K + UDU^{\mathsf T}\) needs only a small matrix the size of the number of changed modes:</p>
+        <div class="eq">\[ S = U^{\mathsf T} Z U, \qquad \theta' = \theta - \big(U^{\mathsf T}\lambda\big)^{\mathsf T} \big(I + DS\big)^{-1} D \,\big(U^{\mathsf T}u\big) \]</div>
+        <p>The off-diagonal entries of \(S\) are the interaction between the changed modes. Adding up independent single-mode predictions would ignore them, which is why combined moves are always scored with the full formula.</p>
+        <h4>Bookkeeping that keeps it honest</h4>
+        <ul class="bullets">
+          <li>Sparse LU of \(K_{ff}\), then cached \(u\), \(\lambda\) and a dense inverse \(Z\). That costs about \(8n^2\) bytes, roughly 32 MB at \(n = 2000\): a deliberate speed-for-memory trade.</li>
+          <li>Every accepted move updates \(Z\), \(u\) and \(\lambda\) with the same formula, and the whole system is refactored every 30 moves to stop floating-point drift.</li>
+          <li>Updates whose small matrix has condition number above \(10^{12}\) are rejected; they usually signal a near-mechanism.</li>
+          <li>Absent candidate tubes keep \(10^{-6}\) of the weakest stiffness so the matrix stays solvable. The final design is rebuilt from scratch without them, so a frame can't win on phantom stiffness.</li>
+        </ul>
+      </section>
+
+      <!-- 8 -->
+      <section class="math-step" data-title="The search" hidden>
+        <span class="math-kicker">08 · Choosing tubes and moving nodes</span>
+        <h3>A guided walk through <em>10<sup>77</sup></em> possible frames.</h3>
+        <p class="lede">A <strong>ground structure</strong> draws every candidate tube between allowable nodes; the optimizer decides which to keep and in what stock. With \(m\) groups and \(p\) profiles each, there are up to \((p+1)^m\) combinations. Even \(m = 100\), \(p = 5\) gives \(6^{100} \approx 6.5 \times 10^{77}\). Enumeration is out.</p>
+        <p>The discrete rules are simple equations on binaries \(z_{g,p}\) (group \(g\) uses profile \(p\)):</p>
+        <div class="eq">\[ \sum_{p \in P_g} z_{g,p} \le 1, \qquad z_{g,p} = z_{\bar g,p}\ \ \text{(left/right mirror)}, \qquad \pi_g + \pi_h \le 1\ \ \text{(conflicting tubes)} \]</div>
+        <h4>The inner loop</h4>
+        <ol class="steps">
+          <li><strong>Best-improvement local search.</strong> Score every legal add, remove and resize exactly with the low-rank update, and take the largest gain \(\Delta M\). A tabu list of the last 8 groups stops it cycling.</li>
+          <li><strong>A small integer program for combinations.</strong> Choose up to six compatible moves that look good together:
+            <div class="eq">\[ \max \sum_k g_k y_k \quad \text{s.t.} \quad \sum_{k \in M(g)} y_k \le 1,\quad \sum_k y_k \le 6,\quad y_k \in \{0,1\} \]</div>
+            Gains don't simply add because tubes interact through \(K^{-1}\), so the combination is re-scored for real and kept only if it actually improves.</li>
+          <li><strong>Random kicks.</strong> From the best state, make a few random feasible changes and search again, to escape local optima.</li>
+          <li><strong>Enforce the weight cap, swap in stocked sizes, and rebuild</strong> the final recipe independently.</li>
+        </ol>
+        <h4>Two kinds of merit</h4>
+        <div class="eq">\[ M_{\text{ratio}} = Q - \beta \max(0,\ W - W_{\max}),\ \ \beta = 2 \qquad\qquad M_{\text{target}} = \begin{cases} 1 + \dfrac{1}{1 + W} &amp; \text{target and cap met} \\[6pt] -\,s - e &amp; \text{otherwise} \end{cases} \]</div>
+        <span class="eq-note">s and e are the relative stiffness shortfall and weight excess. Every feasible frame scores above 1 and every infeasible one at or below 0, so a near miss can never outrank a design that passes.</span>
+        <h4>Moving the nodes</h4>
+        <p>An outer search moves 8 continuous node coordinates within their windows, plus 2 discrete choices. It starts with a Latin hypercube, which visits every interval of every coordinate once, then refines the best point with a compass search:</p>
+        <div class="eq">\[ p_k^{(i)} = \ell_k + (h_k - \ell_k)\,\frac{\pi_k(i) + u_{ik}}{n}, \qquad p^\ast \pm \Delta\,(h_k - \ell_k)\, e_k, \quad \Delta_0 = 0.25,\ \text{halve on failure} \]</div>
+        <p><strong>Pareto, not just one winner.</strong> Frame A dominates B if \(W_A \le W_B\) and \(K_A \ge K_B\), with one inequality strict. Non-dominated frames are kept because they may be the lightest way to hit a different target. And "best found" is honest language: no finite search proves a global optimum.</p>
+      </section>
+
+      <!-- 9 -->
+      <section class="math-step" data-title="Geometric feasibility" hidden>
+        <span class="math-kicker">09 · Is the frame allowed?</span>
+        <h3>A great score can't buy back <em>a failed check.</em></h3>
+        <p class="lede">The solver answers "how much does this idealised structure deform?" Feasibility asks whether the geometry, stock and joints are allowed. Hard checks are constraints, \(g_j(p,x) \le 0\), and no stiffness bonus cancels one.</p>
+        <h4>Distances that respect the real tube</h4>
+        <p>Project a point onto a tube centreline from \(a\) to \(b\) (\(d = b - a\)) and clip to the segment, so a point beyond the end of a short tube isn't treated as supported:</p>
+        <div class="eq">\[ t^\ast = \frac{(p - a)^{\mathsf T} d}{d^{\mathsf T} d}, \qquad \hat t = \min\!\big(1, \max(0, t^\ast)\big), \qquad q = a + \hat t\, d \]</div>
+        <p>For two tubes, minimise the distance between centrelines over both segment parameters, then subtract both radii: \(\delta_{\text{surface}} = \delta_{\text{axis}} - (r_1 + r_2)\). Clear centrelines can still mean colliding tubes.</p>
+        <h4>Weld angles</h4>
+        <div class="eq">\[ \alpha = \cos^{-1}\!\big(\operatorname{clip}(\hat d_1^{\mathsf T} \hat d_2,\ -1,\ 1)\big) \]</div>
+        <p>The project's weld screen requires at least 30° between tubes leaving a joint and limits how many tubes meet there. Endpoints within 30 mm are clustered into one joint. Example: directions \((1,0,0)\) and \((\cos 25^\circ, \sin 25^\circ, 0)\) meet at 25°, a 5° deficit that no stiffness gain can fix.</p>
+        <h4>Keep-outs as half-spaces</h4>
+        <p>The battery, motor, cockpit and footwell are convex keep-out volumes. Each is a set of planes, and the signed distance-like function is the largest plane value:</p>
+        <div class="eq">\[ h(p) = \max_i \big(n_i^{\mathsf T} p + d_i\big), \qquad h_{\min} = \min_{t \in [t_0,\,t_1]}\ \max_i \big(\alpha_i + \beta_i t\big), \qquad t_{ij} = \frac{\alpha_j - \alpha_i}{\beta_i - \beta_j} \]</div>
+        <p>Along a tube, \(h\) is a maximum of straight lines, so it is convex and piecewise linear. Its minimum sits at an endpoint or where two planes swap. Checking those breakpoints catches the grazing contacts that regular sampling misses. The clearance margin is \(\delta = h_{\min} - r - m\).</p>
+        <h4>Why the frame is full of triangles</h4>
+        <p>A four-sided bay can shear into a parallelogram without stretching any edge. A diagonal turns that racking into axial strain. For a bay of width \(a\) and diagonal length \(L_d\):</p>
+        <div class="eq">\[ \Delta L_d \approx \frac{a}{L_d}\,\delta \qquad\Longrightarrow\qquad k_{\text{rack}} \approx \frac{EA\,a^2}{L_d^3} \]</div>
+        <p>A triangle only counts if it is real: three connected edges and a non-zero area \(\tfrac12 \lVert (r_j - r_i) \times (r_k - r_i) \rVert\). Labels like "brace" prove nothing.</p>
+      </section>
+
+      <!-- 10 -->
+      <section class="math-step" data-title="Reading a result" hidden>
+        <span class="math-kicker">10 · Trusting the numbers</span>
+        <h3>Performance and acceptance are <em>separate claims.</em></h3>
+        <p class="lede">To show every number is traceable, the write-up re-solves a saved historical recipe (outer-b6: 111 straight members plus the hoops, 211 beam elements) with the frozen beam model.</p>
+        <div class="table-wrap"><table class="num-table">
+          <thead><tr><th>Quantity</th><th>Recomputed</th></tr></thead>
+          <tbody>
+            <tr><td>Probe rotations</td><td>0.21453° · 0.21293°</td></tr>
+            <tr><td>Average rotation</td><td>0.21373°</td></tr>
+            <tr><td>Torque from the load coordinates</td><td>543.23 lb·ft</td></tr>
+            <tr><td>Tracker rigidity (545 / average)</td><td>2,549.95 lb·ft/deg</td></tr>
+            <tr><td>Estimated weight</td><td>75.48 lb</td></tr>
+            <tr><td>Rigidity per pound</td><td>33.79</td></tr>
+            <tr><td>Elastic strain energy</td><td>1.348 J</td></tr>
+          </tbody></table></div>
+        <p>That frame is a teaching example, not a winner: its beam numbers are exact for the model, but it failed the strict weld screen. The 009c design shown on this page was scored with the team's SolidWorks beam study instead.</p>
+        <div class="callout blue"><strong>Same frame, two honest stiffnesses</strong><p>The probe measures two crossbars. A work-conjugate twist uses the whole load pattern: \(\theta_w = f^{\mathsf T}u / T\), so \(K_w = T^2 / (2U)\). For outer-b6 that is 2,589.9 lb·ft/deg against 2,541.7 from the probes at the same torque. Neither is wrong, but you can't compare designs while silently switching definitions.</p></div>
+        <h4>What makes a result trustworthy</h4>
+        <ul class="bullets">
+          <li><strong>Algebra:</strong> a small scaled residual \(\lVert Ku - f\rVert / (\lVert K\rVert \lVert u\rVert + \lVert f\rVert)\), a symmetric \(K\), load reversal flipping \(u\), and low-rank updates matching a fresh factorisation.</li>
+          <li><strong>Statics:</strong> applied forces and reactions sum to zero, and so do their moments.</li>
+          <li><strong>Topology:</strong> the intended structure is connected, and loads, fixtures and probes sit on the right nodes.</li>
+          <li><strong>Fresh rebuild:</strong> the winner is reassembled from its recipe instead of trusting cached inverses or recorded weights.</li>
+        </ul>
+        <div class="callout"><strong>Stiffness is not strength</strong><p>Torsional rigidity says how much the frame deforms, not whether it survives. That needs stresses (\(N/A\), \(Mc/I\), \(Tr/J\)), buckling (\(P_{cr} = \pi^2 EI / (k_L L)^2\)), welds and fatigue: separate checks that a single linear torsion score doesn't replace.</p></div>
+      </section>
+    </div>
+
+    <footer class="math-foot">
+      <button type="button" class="btn btn-ghost" data-math-prev>← Back</button>
+      <span class="math-count" aria-live="polite" data-math-count>1 / 10</span>
+      <button type="button" class="btn btn-primary" data-math-next>Next →</button>
+    </footer>
+  </div>
+</dialog>
+
+<script src="assets/js/script.js?v=20261109-math"></script>
+<script src="assets/js/prototypes.js?v=20261109-math"></script>
+<script src="assets/js/optimizer-math.js?v=20261109-math"></script>
 </body>
 </html>

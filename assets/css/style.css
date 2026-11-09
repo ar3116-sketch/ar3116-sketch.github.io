@@ -687,3 +687,195 @@ a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid c
 .feature-notes { max-width: 850px; margin-top: 18px; }
 .feature-notes p { margin-bottom: 12px; }
 .feature-notes strong { color: var(--text); font-weight: 600; }
+
+/* 3D art: a quiet side section. Reuses the square, mono-captioned figure style above. */
+.art-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-auto-flow:dense; gap:14px; }
+.art-tile { margin:0; min-width:0; }
+.art-hero { grid-column:1 / -1; }
+.art-pair { grid-column:span 2; }
+.art-pair-media { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.art-media { display:block; width:100%; aspect-ratio:4 / 5; background:#101112; overflow:hidden; }
+.art-hero .art-media { aspect-ratio:16 / 9; }
+.art-media img { width:100%; height:100%; object-fit:contain; }
+video.art-media { height:auto; object-fit:contain; }
+a.art-media { cursor:zoom-in; }
+.art-tile figcaption { margin-top:10px; font-family:var(--font-mono); font-size:10px; line-height:1.6; color:var(--text-dim); }
+@media(max-width:800px) {
+ .art-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:560px) {
+ .art-grid { grid-template-columns:minmax(0,1fr); }
+ .art-pair { grid-column:auto; }
+ .art-pair-media { grid-template-columns:minmax(0,1fr); }
+ .art-media, .art-hero .art-media { aspect-ratio:auto; }
+ .art-media img { height:auto; }
+}
+
+/* Interactive CAD workbench: same editorial language (square panels, mono labels), plus a live 3D canvas. */
+:root { --cad-glow: rgba(255,255,255,.09); }
+:root[data-theme="light"] { --cad-glow: rgba(0,0,0,.05); }
+.cad-section { padding-bottom: 20px; }
+.cad-viewer { background: var(--surface); border-top: 3px solid var(--text); }
+.cad-tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--border); }
+.cad-tabs button { appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 15px 18px; color: var(--text-dim); font: 500 10px/1 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
+.cad-tabs button:hover { color: var(--text); }
+.cad-tabs button[aria-selected="true"] { color: var(--text); border-color: var(--text); }
+.cad-stage { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); min-height: clamp(440px, 64vh, 640px); }
+.cad-info { display: flex; flex-direction: column; padding: 28px; border-right: 1px solid var(--border); }
+.cad-kicker { font: 10px/1.4 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-dim); }
+.cad-name { display: block; margin: 10px 0 12px; font-size: clamp(30px, 3.6vw, 46px); font-weight: 500; line-height: 1.02; letter-spacing: -.045em; }
+.cad-blurb { font-size: 15px; line-height: 1.55; color: var(--text-dim); }
+.cad-specs { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 22px 0 0; padding-top: 16px; border-top: 1px solid var(--border); font: 11px/1.45 var(--font-mono); }
+.cad-specs dt { color: var(--text-faint); text-transform: uppercase; font-size: 10px; letter-spacing: .04em; }
+.cad-specs dd { margin: 0; color: var(--text); }
+.cad-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 24px; }
+.cad-controls [aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+.cad-canvas { position: relative; min-width: 0; background: radial-gradient(ellipse 60% 55% at 50% 55%, var(--cad-glow), transparent 75%); }
+.cad-model { display: block; width: 100%; height: 100%; min-height: 380px; background: transparent; --poster-color: transparent; }
+.cad-model:focus-visible { outline: 2px solid var(--text); outline-offset: -4px; }
+.cad-hint { position: absolute; right: 18px; bottom: 16px; margin: 0; font: 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-faint); pointer-events: none; }
+.cad-loading { position: absolute; left: 0; right: 0; top: 0; height: 2px; overflow: hidden; pointer-events: none; }
+.cad-loading span { display: block; height: 100%; background: var(--text); transform: scaleX(0); transform-origin: left; transition: transform .2s ease, opacity .4s ease; }
+.cad-loading.is-done span { opacity: 0; }
+#cad { scroll-margin-top: 70px; }
+@media (max-width: 800px) {
+ .cad-stage { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+ .cad-canvas { order: -1; height: min(72vw, 420px); }
+ .cad-model { min-height: 0; }
+ .cad-info { padding: 20px; border-right: 0; border-top: 1px solid var(--border); }
+ .cad-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+ .cad-tabs button { flex: 0 0 auto; padding: 14px 14px; }
+}
+@media (max-width: 420px) { .cad-controls .btn { flex: 1 1 auto; justify-content: center; } }
+
+/* Chassis optimizer: "How the math works" launcher and explainer, in the same editorial language. */
+.math-launch { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "kicker go" "title go" "eq go"; align-items: center; column-gap: 24px; width: 100%; max-width: 850px; margin: 22px 0 0; padding: 20px 24px 22px; text-align: left; background: var(--surface-2); border: 1px solid var(--border); border-top: 3px solid var(--text); color: var(--text); transition: background .2s, border-color .2s; }
+.math-launch:hover { background: var(--surface); border-color: var(--border-strong); border-top-color: var(--text); }
+.math-launch:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+.math-launch-kicker { grid-area: kicker; font: 500 10px/1.4 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-dim); }
+.math-launch-title { grid-area: title; margin: 6px 0 8px; font-size: clamp(24px, 2.6vw, 34px); font-weight: 500; line-height: 1.05; letter-spacing: -.045em; }
+.math-launch-eq { grid-area: eq; font: 12px/1.4 var(--font-mono); color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.math-launch-go { grid-area: go; padding: 12px 16px; border: 1px solid var(--border-strong); font: 500 10px var(--font-mono); letter-spacing: .035em; text-transform: uppercase; transition: background .2s, color .2s; }
+.math-launch:hover .math-launch-go { background: var(--text); color: var(--bg); }
+
+html.dialog-open { overflow: hidden; }
+.math-dialog { width: min(1180px, calc(100vw - 48px)); height: min(880px, calc(100dvh - 48px)); max-width: none; max-height: none; margin: auto; padding: 0; overflow: hidden; color: var(--text); background: var(--bg); border: 1px solid var(--border-strong); border-top: 3px solid var(--text); border-radius: 0; }
+.math-dialog::backdrop { background: rgba(10, 10, 10, .7); }
+.math-shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; }
+.math-top { grid-column: 1 / -1; position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 16px 14px 24px; border-bottom: 1px solid var(--border); }
+.math-top-title { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.math-top-title small { font: 500 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-dim); }
+.math-top-title strong { font-size: 18px; font-weight: 500; letter-spacing: -.035em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.math-top-actions { display: flex; align-items: center; gap: 8px; }
+.math-close { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--border-strong); font-size: 15px; transition: background .2s, color .2s; }
+.math-close:hover { background: var(--text); color: var(--bg); }
+.math-progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; }
+.math-progress span { display: block; height: 100%; background: var(--text); transform-origin: 0 50%; transform: scaleX(var(--p, .1)); transition: transform .35s ease; }
+.math-nav { overflow-y: auto; padding: 8px 0; border-right: 1px solid var(--border); counter-reset: step; }
+.math-nav button { counter-increment: step; display: flex; align-items: baseline; gap: 12px; width: 100%; padding: 11px 20px 11px 24px; text-align: left; font-size: 14px; color: var(--text-dim); border-left: 2px solid transparent; transition: color .2s, background .2s; }
+.math-nav button::before { content: counter(step, decimal-leading-zero); font: 10px var(--font-mono); color: var(--text-faint); min-width: 16px; }
+.math-nav button:hover { color: var(--text); background: var(--accent-soft); }
+.math-nav button[aria-current="step"] { color: var(--text); border-left-color: var(--text); background: var(--accent-soft); }
+.math-nav button[aria-current="step"]::before { color: var(--text); }
+.math-body { position: relative; overflow-y: auto; overscroll-behavior: contain; } /* positioned so KaTeX's hidden MathML can't overflow the dialog */
+.math-step { max-width: 800px; padding: 36px 44px 52px; }
+.math-step[hidden] { display: none; }
+.math-kicker { font: 500 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-dim); }
+.math-step > h3 { margin: 12px 0 20px; font-size: clamp(32px, 3.8vw, 50px); font-weight: 500; line-height: 1; letter-spacing: -.055em; }
+.math-step > h3 em { font-style: normal; color: var(--text-dim); }
+.math-step h4 { margin: 32px 0 10px; font-size: 18px; font-weight: 600; letter-spacing: -.02em; }
+.math-step p { margin: 0 0 14px; font-size: 16px; line-height: 1.65; color: var(--text-dim); }
+.math-step p strong, .math-step li strong { color: var(--text); font-weight: 600; }
+.math-step .lede { font-size: 19px; line-height: 1.5; color: var(--text); }
+.math-step ul.bullets, .math-step ol.steps { margin: 0 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.math-step ul.bullets li, .math-step ol.steps li { position: relative; padding-left: 24px; color: var(--text-dim); line-height: 1.6; }
+.math-step ul.bullets li::before { content: ''; position: absolute; left: 2px; top: .8em; width: 10px; height: 1px; background: var(--text); }
+.math-step ol.steps { counter-reset: li; }
+.math-step ol.steps li { counter-increment: li; padding-left: 32px; }
+.math-step ol.steps li::before { content: counter(li, decimal-leading-zero); position: absolute; left: 0; top: .2em; font: 11px var(--font-mono); color: var(--text-faint); }
+.eq { margin: 6px 0 20px; padding: 4px 22px; border-left: 2px solid var(--text); background: var(--surface); overflow-x: auto; overflow-y: hidden; color: var(--text); }
+.eq .katex-display { margin: .7em 0; }
+.eq-note { display: block; margin: -10px 0 18px; font: 11px/1.5 var(--font-mono); color: var(--text-faint); }
+.math-step .katex { font-size: 1.08em; }
+.math-step p .katex, .math-step li .katex { color: var(--text); }
+.callout { margin: 22px 0; padding: 18px 22px; background: var(--surface); border: 1px solid var(--border); }
+.callout > strong:first-child { display: block; margin-bottom: 8px; font: 500 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text); }
+.callout p:last-child { margin-bottom: 0; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 22px 0; border: 1px solid var(--border); }
+.trio > div { padding: 18px; }
+.trio > div + div { border-left: 1px solid var(--border); }
+.trio b { display: block; margin-bottom: 4px; font-size: 16px; font-weight: 600; letter-spacing: -.02em; }
+.trio span { display: block; font-size: 14px; line-height: 1.5; color: var(--text-dim); }
+.trio i { display: block; margin-bottom: 10px; font: normal 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-faint); }
+.flow { margin: 22px 0; padding: 0; list-style: none; border-top: 1px solid var(--border); }
+.flow li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--text-dim); }
+.flow li::before { content: attr(data-n); font: 11px/1.8 var(--font-mono); color: var(--text-faint); }
+.flow b { display: block; color: var(--text); font-weight: 600; }
+.flow span { font-size: 14.5px; }
+.flow-loop { margin-top: 8px; font: 11px var(--font-mono); color: var(--text-faint); }
+.mode-table, .num-table { width: 100%; margin: 10px 0 20px; border-collapse: collapse; font-size: 14.5px; }
+.mode-table th, .mode-table td, .num-table th, .num-table td { padding: 10px 12px 10px 0; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.mode-table th, .num-table th { font: 500 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-faint); border-bottom-color: var(--border-strong); }
+.mode-table td, .num-table td { color: var(--text-dim); }
+.num-table td:last-child { font-family: var(--font-mono); color: var(--text); text-align: right; white-space: nowrap; padding-right: 0; }
+.table-wrap { overflow-x: auto; }
+
+/* Explainer widgets */
+.mw { margin: 24px 0 26px; background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--text); }
+.mw-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 18px; border-bottom: 1px solid var(--border); }
+.mw-head strong { font-size: 15px; font-weight: 600; letter-spacing: -.02em; }
+.mw-head span { flex-shrink: 0; white-space: nowrap; font: 500 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-dim); }
+.mw-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; padding: 18px; }
+.mw-controls { display: flex; flex-direction: column; gap: 16px; }
+.mw-controls label { display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; color: var(--text-dim); }
+.mw-controls label > span { display: block; }
+.mw-controls output { float: right; margin-left: 10px; font: 500 12px var(--font-mono); color: var(--text); }
+.mw-controls select { padding: 9px 10px; border: 1px solid var(--border-strong); border-radius: 0; background: var(--bg); color: var(--text); font: 12px var(--font-mono); }
+.mw input[type="range"] { width: 100%; height: 20px; accent-color: var(--text); cursor: pointer; }
+.mw-out { display: grid; grid-template-columns: 1fr 1fr; margin: 0; align-content: start; border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.mw-out div { padding: 11px 13px; min-width: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.mw-out dt { font: 10px var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-faint); }
+.mw-out dd { margin: 4px 0 0; font: 500 18px/1.2 var(--font-mono); letter-spacing: -.03em; color: var(--text); overflow-wrap: anywhere; }
+.mw-out dd small { display: block; margin-top: 3px; font: 11px var(--font-mono); letter-spacing: 0; color: var(--text-faint); }
+.mw-out .hl { background: var(--text); }
+.mw-out .hl dt, .mw-out .hl dd small { color: color-mix(in srgb, var(--bg) 65%, transparent); }
+.mw-out .hl dd { color: var(--bg); }
+.mw-out .wide { grid-column: 1 / -1; }
+.math-step .mw-note { padding: 0 18px 16px; margin: 0; font: 11px/1.55 var(--font-mono); color: var(--text-faint); }
+.mw-figure { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; }
+.mw svg { width: 100%; height: auto; display: block; overflow: visible; }
+.mw-controls svg { max-width: 190px; margin: 4px auto 0; }
+.mw svg text { font-family: var(--font-mono); font-size: 11px; fill: var(--text-faint); }
+.mw-controls svg text { font-size: 9px; }
+.mw .ax { stroke: var(--border-strong); stroke-width: 1; }
+.mw .gridl { stroke: var(--border); stroke-width: 1; }
+.mw .c-exact { stroke: var(--text); stroke-width: 2.25; fill: none; }
+.mw .c-lin { stroke: var(--text-faint); stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; }
+.mw .tube-ring { fill: var(--text); }
+.mw .tube-base { fill: none; stroke: var(--text-faint); stroke-width: 1.25; stroke-dasharray: 4 4; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; font: 11px var(--font-mono); color: var(--text-faint); }
+.legend i { display: inline-block; width: 16px; height: 2px; margin-right: 6px; vertical-align: middle; background: var(--text); }
+.legend i.lin { background: repeating-linear-gradient(90deg, var(--text-faint) 0 5px, transparent 5px 9px); }
+.math-foot { grid-column: 2; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 24px; border-top: 1px solid var(--border); }
+.math-foot .btn[disabled] { opacity: .3; pointer-events: none; }
+.math-count { font: 11px var(--font-mono); color: var(--text-faint); }
+.math-loading { padding: 10px 44px 0; font: 11px var(--font-mono); color: var(--text-faint); }
+@media (max-width: 800px) {
+  .math-launch { grid-template-areas: "kicker" "title" "eq" "go"; grid-template-columns: minmax(0, 1fr); padding: 18px; }
+  .math-launch-go { justify-self: start; margin-top: 14px; }
+  .math-dialog { width: 100vw; height: 100dvh; border: 0; border-top: 3px solid var(--text); }
+  .math-shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto minmax(0, 1fr) auto; }
+  .math-top { padding: 12px 12px 12px 18px; }
+  .math-nav { display: flex; overflow-x: auto; overflow-y: hidden; padding: 0; border-right: 0; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+  .math-nav::-webkit-scrollbar { display: none; }
+  .math-nav button { flex: 0 0 auto; width: auto; padding: 12px 14px; font-size: 13px; white-space: nowrap; border-left: 0; border-bottom: 2px solid transparent; }
+  .math-nav button[aria-current="step"] { border-bottom-color: var(--text); }
+  .math-step { padding: 24px 18px 40px; }
+  .math-foot { grid-column: 1; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
+  .mw-body { grid-template-columns: minmax(0, 1fr); padding: 14px; }
+  .trio { grid-template-columns: minmax(0, 1fr); }
+  .trio > div + div { border-left: 0; border-top: 1px solid var(--border); }
+  .eq { padding: 2px 14px; }
+  .math-loading { padding: 10px 18px 0; }
+}
+@media (max-width: 420px) { .mw-out dd { font-size: 15px; } }
